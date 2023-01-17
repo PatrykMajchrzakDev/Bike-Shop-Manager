@@ -1,4 +1,21 @@
 {
+  "name": "bike-shop-manager",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PatrykMajchrzakDev/Bike-Shop-Manger.git"
+  },
+  "author": "Patryk Majchrzak",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/PatrykMajchrzakDev/Bike-Shop-Manger/issues"
+  },
+  "homepage": "https://github.com/PatrykMajchrzakDev/Bike-Shop-Manger#readme",
+  "description": "",
   "dependencies": {
     "cloudinary": "^1.33.0",
     "connect-mongo": "^4.6.0",
@@ -10,5 +27,8 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.20",
     "passport": "^0.6.0"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
   }
 }
