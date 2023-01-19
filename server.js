@@ -4,13 +4,13 @@ const mongoose = require("mongoose");
 const passport = require("passport");
 const mainRoutes = require("./routes/main");
 const connectDB = require("./config/database");
+const flash = require("express-flash");
 
 // !!IMPORTANT TO BE FIRST!! Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
 
 //Connect do database
 connectDB();
-console.log(process.env.DB_STRING);
 
 // const connectDB = require("./config/database");
 const logger = require("morgan");
@@ -30,6 +30,9 @@ app.use(logger("dev"));
 
 //Setup Routes for which the server is listening
 app.use("/", mainRoutes);
+
+//Use flash messages for errors, info, ect...
+app.use(flash());
 
 //Server Running
 app.listen(process.env.PORT, () => {
