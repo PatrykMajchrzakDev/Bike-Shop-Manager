@@ -1,32 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/index.css" />
-  </head>
-  <body>
-    <main>
-      <h1>Welcome to Bike Shop Manager</h1>
-      <div class="heading">
-        <h2>Sign In</h2>
-        <p>
-          New User? <span><a href="#">Create new account</a></span>
-        </p>
-      </div>
-      <form action="/login" method="POST">
-        <div class="input-control">
-          <label for="email" hidden>Email Address</label>
-          <input type="email" name="email" placeholder="Email Address" />
-        </div>
-        <div class="input-control">
-          <label for="password" hidden>Password</label>
-          <input type="email" name="email" placeholder="Email Address" />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-    </main>
-  </body>
-</html>
+<%- include('partials/header') -%>
+
+<main>
+  <h1>Welcome to Bike Shop Manager</h1>
+  <div class="heading">
+    <h2>Sign In</h2>
+    <p>
+      New User? <span><a href="/signup">Create new account</a></span>
+    </p>
+  </div>
+  <form action="/login" method="POST">
+    <div class="input-control">
+      <label for="email" hidden>Email Address</label>
+      <input type="email" name="email" placeholder="Email Address" />
+    </div>
+    <div class="input-control">
+      <label for="password" hidden>Password</label>
+      <input type="email" name="email" placeholder="Email Address" />
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+
+<%- include('partials/footer') -%>

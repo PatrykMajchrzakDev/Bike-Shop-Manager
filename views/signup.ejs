@@ -1,0 +1,35 @@
+<%- include('partials/header') -%>
+<main class="">
+  <div class="">
+    <section class="">
+      <form action="/signup" method="POST">
+        <!-- Username form -->
+        <div>
+          <label for="userName">Username</label>
+          <input type="text" name="userName" id="userName" />
+          <div>Come up with unique username.</div>
+        </div>
+        <!-- Email Form -->
+        <div>
+          <label for="email">Email address</label>
+          <input type="text" name="email" id="email" />
+          <div>We'll never share your email with aonyone else.</div>
+        </div>
+        <!-- Password form -->
+        <div>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" />
+          <div>Come up strong password</div>
+        </div>
+        <!-- Confirm Password Form -->
+        <div>
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" name="confirmPassword" id="confirmPassword" />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </div>
+</main>
+
+<%- include('partials/footer') -%>
