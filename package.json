@@ -17,16 +17,19 @@
   "homepage": "https://github.com/PatrykMajchrzakDev/Bike-Shop-Manger#readme",
   "description": "",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "cloudinary": "^1.33.0",
     "connect-mongo": "^4.6.0",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
+    "express-flash": "^0.0.2",
     "mongodb": "^4.13.0",
     "mongoose": "^6.8.3",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.20",
-    "passport": "^0.6.0"
+    "passport": "^0.6.0",
+    "validator": "^13.7.0"
   },
   "scripts": {
     "start": "nodemon server.js"
