@@ -1,8 +1,17 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
+  content: ["../public/**/*.{ejs}"],
   theme: {
-    extend: {},
+    screens: {
+      xs: "361px",
+      ...defaultTheme.screens,
+    },
+    extend: {
+      //Default site colors
+      "primary-color": "###",
+    },
   },
   plugins: [],
-}
+};
