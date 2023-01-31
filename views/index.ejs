@@ -1,24 +1,43 @@
-<%- include('partials/header') -%>
-
-<main>
-  <h1>Welcome to Bike Shop Manager</h1>
-  <div class="heading">
-    <h2>Sign In</h2>
-    <p>
-      New User? <span><a href="/signup">Create new account</a></span>
-    </p>
-  </div>
-  <form action="/login" method="POST">
-    <div class="input-control">
-      <label for="email" hidden>Email Address</label>
-      <input type="email" name="email" placeholder="Email Address" />
-    </div>
-    <div class="input-control">
-      <label for="password" hidden>Password</label>
-      <input type="password" name="password" placeholder="Password" />
-    </div>
-    <button type="submit">Submit</button>
-  </form>
-</main>
-
-<%- include('partials/footer') -%>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bike Shop Manager</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body class="bg-cultured font-sans">
+    <main
+      class="flex justify-center items-center max-w-[80%] min-h-screen w-full p-y-8 m-y-auto drop-shadow-lg"
+    >
+      <div class="bg-white">
+        <h1 class="text-3xl text-center p-4">Welcome to Bike Shop Manager</h1>
+        <section class="max-w-md w-full m-x-8 m-y-auto p-8-10">
+          <div class="heading">
+            <h2 class="p-4 text-xl">Sign In</h2>
+            <p class="p-4">
+              New User?
+              <span
+                ><a class="text-blue" href="/signup"
+                  >Create new account</a
+                ></span
+              >
+            </p>
+          </div>
+        </section>
+        <form action="/login" method="POST">
+          <div class="p-4">
+            <label for="email" hidden>Email Address</label>
+            <input type="email" name="email" placeholder="Email Address" />
+          </div>
+          <div class="p-4">
+            <label for="password" hidden>Password</label>
+            <input type="password" name="password" placeholder="Password" />
+          </div>
+          <button class="p-4" type="submit">Submit</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
