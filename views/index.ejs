@@ -8,13 +8,19 @@
     <link rel="stylesheet" href="css/index.css" />
   </head>
   <body class="bg-cultured font-sans">
-    <main
-      class="flex justify-center items-center max-w-[80%] min-h-screen w-full p-y-8 m-y-auto drop-shadow-lg"
-    >
-      <div class="bg-white">
-        <h1 class="text-3xl text-center p-4">Welcome to Bike Shop Manager</h1>
-        <section class="max-w-md w-full m-x-8 m-y-auto p-8-10">
-          <div class="heading">
+    <!-- Main -->
+    <main>
+      <!-- Container -->
+      <div
+        class="flex justify-center items-center min-h-screen w-full py-8 my-auto drop-shadow-lg"
+      >
+        <!-- Wrapper -->
+        <section class="bg-white max-w-md w-full mx-8 my-auto px-8 py-5">
+          <!-- Heading -->
+          <div class="">
+            <h1 class="text-3xl text-center p-4">
+              Welcome to Bike Shop Manager
+            </h1>
             <h2 class="p-4 text-xl">Sign In</h2>
             <p class="p-4">
               New User?
@@ -25,18 +31,39 @@
               >
             </p>
           </div>
+          <!-- SignIN form -->
+          <form action="/login" method="POST" class="w-full h-auto mt-4">
+            <!-- Email input -->
+            <div class="p-4 flex items-center justify-between mb-2">
+              <label for="email" hidden>Email Address</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                class="text-base font-normal w-full h-auto px-3 py-3 bg-sky-100 rounded-3xl"
+              />
+            </div>
+            <!-- Password input -->
+            <div class="p-4 flex items-center justify-between mb-2">
+              <label for="password" hidden>Password</label>
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                class="text-base font-normal w-full h-auto px-3 py-3 bg-sky-100 rounded-3xl"
+              />
+            </div>
+            <!-- Submit button -->
+            <div class="flex justify-center w-full">
+              <button
+                class="text-base font-medium cursor-pointer h-auto px-8 py-3 bg-blue rounded-3xl m-none"
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
         </section>
-        <form action="/login" method="POST">
-          <div class="p-4">
-            <label for="email" hidden>Email Address</label>
-            <input type="email" name="email" placeholder="Email Address" />
-          </div>
-          <div class="p-4">
-            <label for="password" hidden>Password</label>
-            <input type="password" name="password" placeholder="Password" />
-          </div>
-          <button class="p-4" type="submit">Submit</button>
-        </form>
       </div>
     </main>
   </body>
