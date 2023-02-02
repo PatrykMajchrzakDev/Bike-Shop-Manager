@@ -31,7 +31,7 @@ exports.postLogin = (req, res, next) => {
         return next(err);
       }
       req.flash("success", { msg: "Success! You are logged in." });
-      res.redirect(req.session.returnTo || "/feed");
+      res.redirect(req.session.returnTo || "/dashboard");
     });
   })(req, res, next);
 };
@@ -52,7 +52,7 @@ exports.logout = (req, res) => {
 //SIGNUP GET PAGE
 exports.getSignup = (req, res) => {
   if (req.user) {
-    return res.redirect("/feed");
+    return res.redirect("/dashboard");
   }
   res.render("signup", {
     title: "Create Account",
@@ -105,7 +105,7 @@ exports.postSignup = (req, res, next) => {
           if (err) {
             return next(err);
           }
-          res.redirect("../feed");
+          res.redirect("../dashboard");
         });
       });
     }

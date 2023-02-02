@@ -1,7 +1,7 @@
 module.exports = {
   getIndex: (req, res) => {
     if (req.user) {
-      return res.redirect("/feed");
+      return res.redirect("/dashboard");
     }
     res.render("index.ejs");
   },

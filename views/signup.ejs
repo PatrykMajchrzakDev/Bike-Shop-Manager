@@ -18,10 +18,10 @@
         <section class="bg-white max-w-md w-full mx-8 my-auto px-8 py-5">
           <% if (locals.messages.errors) { %> <% messages.errors.forEach( el =>
           { %>
-          <div class="alert alert-danger"><%= el.msg %></div>
+          <div class="alert-error"><%= el.msg %></div>
           <% }) %> <% } %> <% if (locals.messages.info) { %> <%
           messages.info.forEach( el => { %>
-          <div class="alert alert-info"><%= el.msg %></div>
+          <div class="alert-warning"><%= el.msg %></div>
           <% }) %> <% } %>
           <!-- Heading -->
           <div class="">
@@ -58,7 +58,9 @@
             </div>
             <!-- Password form -->
             <div class="px-4 py-2 flex mb-4 flex flex-col">
-              <div class="mb-2 px-3">Make secure password</div>
+              <div class="mb-2 px-3">
+                Make at least 8 characters long password
+              </div>
               <label for="password" hidden>Password</label>
               <input
                 class="text-base font-normal w-full h-auto px-3 py-3 bg-sky-100 rounded-3xl"
