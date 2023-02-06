@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .hamburger {
+    @apply absolute text-white left-[90%] top-[6px] text-[20px] h-[50px] w-[50px] text-center leading-[50px] -translate-x-1/2;
+  }
+  .side-nav-li {
+    @apply relative h-[50px] w-full mx-[5px] list-none leading-[50px];
+  }
+  .side-nav-li-a {
+    @apply text-white flex items-center no-underline transition-all duration-300 ease-out;
+  }
+  .side-nav-li-icon {
+    @apply h-[50px] min-w-[50px] rounded-xl leading-[50px];
+  }
+}

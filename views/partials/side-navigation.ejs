@@ -1,66 +1,81 @@
 <!-- sidebar -->
-<div class="bg-gray fixed top-0 left-0 h-full px-4 py-2 w-60">
-  <!-- logo-content -->
+<div class="bg-gray fixed top-0 left-0 h-full px-[14px] py-[6px] w-60">
+  <!-- logo content -->
   <div>
-    <!-- logo content -->
-    <div>
-      <!-- logo -->
-      <i class="fa-solid fa-bicycle"></i>
-      <i class="fa-solid fa-screwdriver-wrench"></i>
+    <!-- logo -->
+    <div class="text-white flex h-[50px] w-full items-center">
+      <i class="fa-solid fa-bicycle text-lg mr-[5px]"></i>
       <div>
         <!-- logo name -->
-        <div class="text-white">Bike Shop Manager</div>
+        <div class="font-normal text-lg">Bike Shop Manager</div>
       </div>
-      <i class="fa-solid fa-bars"></i>
+      <!-- button -->
+      <i class="@apply hamburger fa-solid fa-bars"></i>
     </div>
+
     <!-- navigation list -->
-    <ul>
+    <ul class="mt-[20px]">
       <!-- search box -->
-      <li>
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Search..." name="" id="" />
+      <li class="side-nav-li">
+        <i
+          class="side-nav-li-icon fa-solid fa-magnifying-glass absolute z-50 text-white text-[22px]"
+        ></i>
+        <input
+          type="text"
+          placeholder="Search..."
+          name=""
+          class="absolute h-full w-full left-0 top-0 rounded-xl outline-none border-none bg-lightGray pl-[50px] text-lg text-white"
+        />
       </li>
       <!-- link names -->
-      <li>
-        <a href="#">
-          <i class="fa-solid fa-border-all"></i>
+      <li class="side-nav-li">
+        <a href="#" class="side-nav-li-a hover:bg-white hover:text-gray">
+          <i class="fa-solid fa-border-all side-nav-li-icon"></i>
           <span>Work Orders</span>
         </a>
       </li>
-      <li>
-        <a href="#">
-          <i class="fa-solid fa-users"></i>
+      <li class="side-nav-li">
+        <a href="#" class="side-nav-li-a hover:bg-white hover:text-gray">
+          <i class="fa-solid fa-users side-nav-li-icon"></i>
           <span>Clients</span>
         </a>
       </li>
-      <li>
-        <a href="#">
-          <i class="fa-solid fa-cart-shopping"></i>
+      <li class="side-nav-li">
+        <a href="#" class="side-nav-li-a hover:bg-white hover:text-gray">
+          <i class="fa-solid fa-cart-shopping side-nav-li-icon"></i>
           <span>Sales</span>
         </a>
       </li>
-      <li>
-        <a href="#">
-          <i class="fa-solid fa-coins"></i>
+      <li class="side-nav-li">
+        <a href="#" class="side-nav-li-a hover:bg-white hover:text-gray">
+          <i class="fa-solid fa-coins side-nav-li-icon"></i>
           <span>Finance</span>
         </a>
       </li>
     </ul>
+
     <!-- Profile content -->
-    <div>
+    <div class="absolute bottom-0 left-0 text-white w-full bg-lightGray">
       <!-- Profile -->
-      <div>
+      <div class="relative py-[10px] px-[6px] h-[60px]">
         <!-- Profile Details -->
-        <div>
-          <img src="../../imgs/profilowe.jpg" alt="" />
+        <div class="flex items-center">
+          <img
+            src="//www.html.am/images/samples/remarkables_queenstown_new_zealand-300x225.jpg"
+            alt="Photo of the Remarkables mountain range in Queenstown, New Zealand."
+            class="h-11 w-11 object-cover rounded-xl"
+          />
           <!-- Username and position -->
-          <div>
-            <div>USERNAME</div>
-            <div>JOB</div>
+
+          <div class="ml-[10px]">
+            <div class="text-[15px] font-normal">USERNAME</div>
+            <div class="text-md">JOB</div>
           </div>
         </div>
-        <a href="/logout">
-          <i class="fa-solid fa-right-from-bracket"></i>
+        <a href="/logout" class="">
+          <i
+            class="fa-solid fa-right-from-bracket absolute left-[88%] bottom-[5px] -translate-x-1/2 min-w-[50px] leading-[50px] text-xl rounded-xl"
+          ></i>
           <span>Logout</span>
         </a>
       </div>
