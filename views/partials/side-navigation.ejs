@@ -1,16 +1,22 @@
 <!-- sidebar -->
-<div class="bg-gray fixed top-0 left-0 h-full px-[14px] py-[6px] w-60">
+<div
+  class="bg-gray fixed top-0 left-0 h-full px-[14px] py-[6px] w-[78px] sidebar transition-all duration-500 ease-linear"
+>
   <!-- logo content -->
   <div>
     <!-- logo -->
     <div class="text-white flex h-[50px] w-full items-center">
-      <i class="fa-solid fa-bicycle text-lg mr-[5px]"></i>
+      <i
+        class="fa-solid fa-bicycle text-lg mr-[5px] opacity-0 pointer-events-none"
+      ></i>
       <div>
         <!-- logo name -->
-        <div class="font-normal text-lg">Bike Shop Manager</div>
+        <div class="font-normal text-lg opacity-0 logoName">
+          Bike Shop Manager
+        </div>
       </div>
       <!-- button -->
-      <i class="@apply hamburger fa-solid fa-bars"></i>
+      <i class="hamburger fa-solid fa-bars" id="btn"></i>
     </div>
 
     <!-- navigation list -->
@@ -18,39 +24,52 @@
       <!-- search box -->
       <li class="side-nav-li">
         <i
-          class="side-nav-li-icon fa-solid fa-magnifying-glass absolute z-50 text-white text-[22px]"
+          class="side-nav-li-icon fa-solid fa-magnifying-glass absolute z-50 text-white text-[22px] searchButton transition-all duration-500 ease-linear text-center -translate-x-[5px]"
         ></i>
         <input
           type="text"
           placeholder="Search..."
           name=""
-          class="absolute h-full w-full left-0 top-0 rounded-xl outline-none border-none bg-lightGray pl-[50px] text-lg text-white"
+          class="absolute h-full w-full -left-[5px] top-0 rounded-xl outline-none border-none bg-lightGray pl-[52px] text-lg text-white"
         />
+        <span id="searchTooltip">Search</span>
       </li>
       <!-- link names -->
       <li class="side-nav-li">
         <a href="#" class="side-nav-li-a hover:bg-white hover:text-gray">
-          <i class="fa-solid fa-border-all side-nav-li-icon"></i>
-          <span>Work Orders</span>
+          <i
+            class="fa-solid fa-clipboard-list side-nav-li-icon text-[22px] text-center -translate-x-[5px]"
+          ></i>
+          <span class="linkName opacity-0 pointer-events-none">Orders</span>
         </a>
+        <span class="tooltipHover">Orders</span>
       </li>
       <li class="side-nav-li">
         <a href="#" class="side-nav-li-a hover:bg-white hover:text-gray">
-          <i class="fa-solid fa-users side-nav-li-icon"></i>
-          <span>Clients</span>
+          <i
+            class="fa-solid fa-users side-nav-li-icon text-[22px] text-center -translate-x-[5px]"
+          ></i>
+          <span class="linkName opacity-0 pointer-events-none">Clients</span>
         </a>
+        <span class="tooltipHover">Clients</span>
       </li>
       <li class="side-nav-li">
         <a href="#" class="side-nav-li-a hover:bg-white hover:text-gray">
-          <i class="fa-solid fa-cart-shopping side-nav-li-icon"></i>
-          <span>Sales</span>
+          <i
+            class="fa-solid fa-cart-shopping side-nav-li-icon text-[22px] text-center -translate-x-[5px]"
+          ></i>
+          <span class="linkName opacity-0 pointer-events-none">Sales</span>
         </a>
+        <span class="tooltipHover">Sales</span>
       </li>
       <li class="side-nav-li">
         <a href="#" class="side-nav-li-a hover:bg-white hover:text-gray">
-          <i class="fa-solid fa-coins side-nav-li-icon"></i>
-          <span>Finance</span>
+          <i
+            class="fa-solid fa-coins side-nav-li-icon text-[22px] text-center -translate-x-[5px]"
+          ></i>
+          <span class="linkName opacity-0 pointer-events-none">Finance</span>
         </a>
+        <span class="tooltipHover">Finance</span>
       </li>
     </ul>
 
@@ -59,7 +78,9 @@
       <!-- Profile -->
       <div class="relative py-[10px] px-[6px] h-[60px]">
         <!-- Profile Details -->
-        <div class="flex items-center">
+        <div
+          class="navbarProfileContent flex items-center opacity-0 pointer-events-none whitespace-nowrap"
+        >
           <img
             src="//www.html.am/images/samples/remarkables_queenstown_new_zealand-300x225.jpg"
             alt="Photo of the Remarkables mountain range in Queenstown, New Zealand."
@@ -74,7 +95,7 @@
         </div>
         <a href="/logout" class="">
           <i
-            class="fa-solid fa-right-from-bracket absolute left-[88%] bottom-[5px] -translate-x-1/2 min-w-[50px] leading-[50px] text-xl rounded-xl"
+            class="navbarLogoutIcon fa-solid fa-right-from-bracket absolute left-1/2 bottom-[5px] -translate-x-1/2 min-w-[50px] leading-[50px] text-xl rounded-xl text-center"
           ></i>
           <span>Logout</span>
         </a>

@@ -14,15 +14,14 @@
     />
     <link rel="stylesheet" href="css/index.css" />
   </head>
-  <!-- relative min-h-screen w-full overflow-hidden -->
-  <body class="bg-cultured font-segoe flex">
+  <body class="bg-cultured">
     <!-- nav bar -->
-    <section class="inline-flex h-screen">
-      <%- include('partials/side-navigation.ejs') -%>
-    </section>
+    <%- include('partials/side-navigation.ejs') -%>
 
     <!-- Content -->
-    <section class="static grow overflow-y-auto break-words">
+    <section
+      class="dashboardContent relative min-h-screen w-[100% - 78px] left-[78px] transition-all duration-500 ease-linear"
+    >
       <h1>
         Welcome to Dashboard
         rrrrrrrrrrrrrrrrraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacccccccccdddddddddaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab
@@ -34,5 +33,6 @@
       <div class="w-72 h-60 bg-green-300"></div>
       <div class="w-72 h-60 bg-black"></div>
     </section>
+    <script src="js/sidenav.js"></script>
   </body>
 </html>
