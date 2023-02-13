@@ -5,11 +5,8 @@ module.exports = {
   content: ["./views/**/*.{html,ejs}"],
   theme: {
     screens: {
-      xs: "359px",
+      xs: "340px",
       ...defaultTheme.screens,
-    },
-    fontFamily: {
-      segoe: ['"Segoe UI"', '"Helvetica Neue"', '"Noto Sans"', "sans-serif"],
     },
     extend: {
       colors: {
@@ -22,6 +19,9 @@ module.exports = {
         vividBurgundy: "#a30b37",
         blue: "#1a73e8",
         light: "#f1f5f9",
+      },
+      fontFamily: {
+        defaultFont: ["Barlow, sans-serif"],
       },
     },
   },
