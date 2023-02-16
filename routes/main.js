@@ -4,11 +4,16 @@ const homeController = require("../controllers/home");
 const authController = require("../controllers/auth");
 const dashboardController = require("../controllers/dashboard");
 const { ensureAuth } = require("../middleware/passport");
+const clientsController = require("../controllers/clients");
 
 //Main Routes
 router.get("/", homeController.getIndex);
 router.get("/dashboard", ensureAuth, dashboardController.getDashboard);
-router.get("/add-client", ensureAuth, dashboardController.addClient);
+router.get("/new-client", ensureAuth, dashboardController.newClient);
+router.get("/clients", ensureAuth, dashboardController.getClients);
+
+//Client routes
+router.post("/createClient", clientsController.addNewClient);
 
 //auth
 router.get("/logout", authController.logout);
