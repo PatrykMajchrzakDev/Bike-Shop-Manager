@@ -8,9 +8,16 @@ module.exports = {
       console.log(err);
     }
   },
-  addClient: async (req, res) => {
+  newClient: async (req, res) => {
     try {
-      res.render("add-client.ejs");
+      res.render("new-client.ejs");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getClients: async (req, res) => {
+    try {
+      res.render("clients.ejs");
     } catch (err) {
       console.log(err);
     }
