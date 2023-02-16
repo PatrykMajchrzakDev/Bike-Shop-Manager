@@ -81,34 +81,30 @@
         <!-- Add order, client and filter bar -->
         <section class="flex flex-row">
           <div
-            class="bg-green-500 rounded-md w-32 p-2 text-white mt-8 flex justify-center mr-4"
-          >
-            <a href="#"> + New order</a>
-          </div>
-          <div
             class="bg-green-500 rounded-md w-32 p-2 text-white mt-8 flex justify-center"
           >
-            <a href="/add-client"> + New client</a>
+            <a href="/new-client"> + New Client</a>
           </div>
         </section>
 
         <!-- Table -->
-        <div>
+        <div class="pt-5">
           <!-- STUFF TO DISPLAY -->
           <!-- form handling -->
           <form action="/" method="GET" class="w-full flex">
-            <table class="flex justify-around grow">
-              <thead class="flex justify-around grow">
-                <tr class="flex justify-around grow">
+            <table class="grow">
+              <thead class="">
+                <tr class="">
                   <th>ID</th>
                   <th>Name</th>
                   <th>Phone</th>
-                  <th>Service</th>
-                  <th>Description</th>
+                  <th>Email</th>
+                  <th>Person or Company</th>
+                  <th>Address</th>
                 </tr>
               </thead>
               <tbody>
-                <!-- <- include('partials/_clientTable.ejs') > Add %% na poczatku i na koncu -->
+                <!-- <- include('partials/_clientTable.ejs') %> Add %% na poczatku i na koncu -->
               </tbody>
             </table>
           </form>

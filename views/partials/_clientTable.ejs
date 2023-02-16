@@ -1,0 +1,18 @@
+<% for(var i = 0; i < clients.length; i++){ %>
+<tr>
+  <td><%= i + 1 %></td>
+  <td><%= clients[i].name %></td>
+  <td><%= clients[i].phone %></td>
+  <td><%= clients[i].email %></td>
+  <td><%= clients[i].personOrCompany %></td>
+  <td><%= clients[i].address %></td>
+  <td>
+    <a href="/update-client/?id=<%= clients[i]._id %>" class="">
+      <span class=""><i class="fas fa-pencil-alt"></i></span>
+    </a>
+    <a class="cursor-pointer" data-id="<%= clients[i]._id%>">
+      <span class=""><i class="fas fa-times"></i></span>
+    </a>
+  </td>
+</tr>
+<% }%>

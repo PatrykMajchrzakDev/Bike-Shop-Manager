@@ -76,8 +76,38 @@
         <section class="w-5/6 bg-red-200 mx-auto mt-20">
           <!-- Intro -->
           <div>
-            <h2>New User</h2>
-            <span>Use the below form to create a new user</span>
+            <h2>New Client</h2>
+            <span>Use the below form to create a new client</span>
+            <form action="/post/createClient" enctype="multipart/form-data" method="POST">
+              <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="" id="name" name="name">
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="text" class="" id="phone" name="phone"></input>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="text" class="" id="email" name="email"></input>
+              </div>
+              <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="" id="address" name="address"></input>
+              </div>
+              <div class="">
+                <label for="personOrCompany" class="text-light">Person / Company</label>
+                <div class="radio inline">
+                  <input type="radio" name="personOrCompany" id="radio-2" value="Person" />
+                  <label for="radio-2" class="radio-label">Person</label>
+                </div>
+                <div class="radio inline">
+                  <input type="radio" id="radio-3" name="personOrCompany" value="Company" />
+                  <label for="radio-3" class="radio-label">Company</label>
+                </div>
+              </div>
+              <button type="submit" class="" value="Save">Save</button>
+            </form>
           </div>
         </section>
       </main>
