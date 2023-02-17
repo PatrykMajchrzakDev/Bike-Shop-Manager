@@ -12,6 +12,7 @@ module.exports = {
       colors: {
         //Default site colors
         mango: "#f5b700",
+        veryLightGray: "#e1e1e1",
         gray: "#292c34",
         lightGray: "#343842",
         cultured: "#f7f4f3",

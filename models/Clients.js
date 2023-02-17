@@ -2,10 +2,10 @@ const mongoose = require("mongoose");
 
 //this is how schematic of db will look like
 const ClientsSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-  },
+  // name: {
+  //   type: String,
+  //   required: true,
+  // },
   phone: {
     type: String,
     requred: true,
@@ -19,17 +19,22 @@ const ClientsSchema = new mongoose.Schema({
     required: false,
     unique: true,
   },
-  personOrCompany: {
+  // personOrCompany: {
+  //   type: String,
+  //   required: true,
+  // },
+  description: {
     type: String,
-    required: true,
+    required: false,
   },
   client: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Client",
   },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
-//assign model
-const Clientsdb = mongoose.model("clientdb", ClientsSchema);
-
-module.exports = Clientsdb;
+module.exports = mongoose.model("Clients", ClientsSchema);
