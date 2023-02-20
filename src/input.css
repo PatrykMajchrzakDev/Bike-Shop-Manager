@@ -53,4 +53,13 @@
     width: calc(100% - 240px);
     left: 240px;
   }
+  .table-border-left {
+    border-left: 2px solid gray;
+  }
+  .table-border-right {
+    border-right: 2px solid gray;
+  }
+  .table-border-bottom {
+    border-bottom: 2px solid gray;
+  }
 }

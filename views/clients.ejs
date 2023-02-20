@@ -95,16 +95,24 @@
             <table class="grow">
               <thead class="">
                 <tr class="">
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>Phone</th>
-                  <th>Email</th>
-                  <th>Person or Company</th>
-                  <th>Address</th>
+                  <th class="table-border-left table-border-bottom">ID</th>
+                  <th class="table-border-left table-border-bottom">Name</th>
+                  <th class="table-border-left table-border-bottom">Phone</th>
+                  <th class="table-border-left table-border-bottom">Email</th>
+                  <th class="table-border-left table-border-bottom">
+                    Person or Company
+                  </th>
+                  <th class="table-border-left table-border-bottom">Address</th>
+                  <th class="table-border-left table-border-bottom">
+                    Created At
+                  </th>
+                  <th class="table-border-left table-border-bottom">
+                    Description
+                  </th>
                 </tr>
               </thead>
               <tbody>
-                <!-- <- include('partials/_clientTable.ejs') %> Add %% na poczatku i na koncu -->
+                <%- include('partials/_clientTable.ejs') %>
               </tbody>
             </table>
           </form>

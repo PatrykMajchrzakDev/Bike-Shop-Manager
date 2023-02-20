@@ -1,18 +1,36 @@
 <% for(var i = 0; i < clients.length; i++){ %>
-<tr>
-  <td><%= i + 1 %></td>
-  <td><%= clients[i].name %></td>
-  <td><%= clients[i].phone %></td>
-  <td><%= clients[i].email %></td>
-  <td><%= clients[i].personOrCompany %></td>
-  <td><%= clients[i].address %></td>
-  <td>
-    <a href="/update-client/?id=<%= clients[i]._id %>" class="">
-      <span class=""><i class="fas fa-pencil-alt"></i></span>
-    </a>
-    <a class="cursor-pointer" data-id="<%= clients[i]._id%>">
-      <span class=""><i class="fas fa-times"></i></span>
-    </a>
+<tr class="hover:bg-lightGray hover:text-white">
+  <td class="text-center table-border-left table-border-bottom p-2">
+    <a href="/dashboard" class="block"><%= i + 1 %></a>
+  </td>
+  <td class="text-center table-border-left table-border-bottom p-2">
+    <a href="/dashboard" class="block"><%= clients[i].name %></a>
+  </td>
+  <td class="text-center table-border-left table-border-bottom p-2">
+    <a href="/dashboard" class="block"><%= clients[i].phone %></a>
+  </td>
+  <td class="text-center table-border-left table-border-bottom p-2">
+    <a href="/dashboard" class="block"><%= clients[i].email %></a>
+  </td>
+  <td class="text-center table-border-left table-border-bottom p-2">
+    <a href="/dashboard" class="block"><%= clients[i].personOrCompany %></a>
+  </td>
+  <td class="text-center table-border-left table-border-bottom p-2">
+    <a href="/dashboard" class="block"><%= clients[i].address %></a>
+  </td>
+  <td
+    class="text-center table-border-left table-border-bottom max-w-[20ch] text-ellipsis overflow-hidden whitespace-nowrap p-2"
+  >
+    <a href="/dashboard" class="block"
+      ><%= clients[i].createdAt.toString().substring(0,25) %></a
+    >
+  </td>
+  <td
+    class="text-center table-border-left table-border-bottom max-w-[20ch] text-ellipsis overflow-hidden whitespace-nowrap p-2"
+  >
+    <a href="/dashboard" class="block"
+      ><%= clients[i].description.substring(0,25) %></a
+    >
   </td>
 </tr>
 <% }%>
