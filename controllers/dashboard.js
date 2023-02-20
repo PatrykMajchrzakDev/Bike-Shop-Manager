@@ -1,4 +1,5 @@
 const cloudinary = require("../middleware/cloudinary");
+const Clients = require("../models/Clients");
 
 module.exports = {
   getDashboard: async (req, res) => {
@@ -17,7 +18,8 @@ module.exports = {
   },
   getClients: async (req, res) => {
     try {
-      res.render("clients.ejs");
+      const clients = await Clients.find().sort({ createdAt: "desc" }).lean();
+      res.render("clients.ejs", { clients: clients });
     } catch (err) {
       console.log(err);
     }

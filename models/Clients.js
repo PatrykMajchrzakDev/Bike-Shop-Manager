@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
 //this is how schematic of db will look like
-const ClientsSchema = new mongoose.Schema({
-  // name: {
-  //   type: String,
-  //   required: true,
-  // },
+const ClientSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
   phone: {
     type: String,
     requred: true,
@@ -19,10 +19,10 @@ const ClientsSchema = new mongoose.Schema({
     required: false,
     unique: true,
   },
-  // personOrCompany: {
-  //   type: String,
-  //   required: true,
-  // },
+  personOrCompany: {
+    type: String,
+    required: true,
+  },
   description: {
     type: String,
     required: false,
@@ -37,4 +37,4 @@ const ClientsSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Clients", ClientsSchema);
+module.exports = mongoose.model("Clients", ClientSchema);
