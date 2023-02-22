@@ -1,35 +1,52 @@
 <% for(var i = 0; i < clients.length; i++){ %>
 <tr class="hover:bg-lightGray hover:text-white">
+  <%- include('../partials/clientInfo.ejs', {num:i}) -%>
   <td class="text-center table-border-left table-border-bottom p-2">
-    <a href="/dashboard" class="block"><%= i + 1 %></a>
+    <label for="my-modal-4" class="block cursor-pointer"><%= i + 1 %></label>
   </td>
   <td class="text-center table-border-left table-border-bottom p-2">
-    <a href="/dashboard" class="block"><%= clients[i].name %></a>
-  </td>
-  <td class="text-center table-border-left table-border-bottom p-2">
-    <a href="/dashboard" class="block"><%= clients[i].phone %></a>
-  </td>
-  <td class="text-center table-border-left table-border-bottom p-2">
-    <a href="/dashboard" class="block"><%= clients[i].email %></a>
-  </td>
-  <td class="text-center table-border-left table-border-bottom p-2">
-    <a href="/dashboard" class="block"><%= clients[i].personOrCompany %></a>
-  </td>
-  <td class="text-center table-border-left table-border-bottom p-2">
-    <a href="/dashboard" class="block"><%= clients[i].address %></a>
-  </td>
-  <td
-    class="text-center table-border-left table-border-bottom max-w-[20ch] text-ellipsis overflow-hidden whitespace-nowrap p-2"
-  >
-    <a href="/dashboard" class="block"
-      ><%= clients[i].createdAt.toString().substring(0,25) %></a
+    <label for="my-modal-4" class="block cursor-pointer"
+      ><%= clients[i].name %></label
     >
   </td>
   <td
-    class="text-center table-border-left table-border-bottom max-w-[20ch] text-ellipsis overflow-hidden whitespace-nowrap p-2"
+    class="text-center table-border-left table-border-bottom p-2 xs:hidden md:table-cell"
   >
-    <a href="/dashboard" class="block"
-      ><%= clients[i].description.substring(0,25) %></a
+    <label for="my-modal-4" class="block cursor-pointer"
+      ><%= clients[i].phone %></label
+    >
+  </td>
+  <td
+    class="text-center table-border-left table-border-bottom p-2 xs:hidden md:table-cell"
+  >
+    <label for="my-modal-4" class="block cursor-pointer"
+      ><%= clients[i].email %></label
+    >
+  </td>
+  <td
+    class="text-center table-border-left table-border-bottom p-2 xs:hidden md:table-cell"
+  >
+    <label for="my-modal-4" class="block cursor-pointer"
+      ><%= clients[i].personOrCompany %></label
+    >
+  </td>
+  <td class="text-center table-border-left table-border-bottom p-2">
+    <label for="my-modal-4" class="block cursor-pointer"
+      ><%= clients[i].address %></label
+    >
+  </td>
+  <td
+    class="text-center table-border-left table-border-bottom max-w-[20ch] text-ellipsis overflow-hidden whitespace-nowrap p-2 xs:hidden lg:table-cell"
+  >
+    <label for="my-modal-4" class="block cursor-pointer"
+      ><%= clients[i].createdAt.toString().substring(0,25) %></label
+    >
+  </td>
+  <td
+    class="text-center table-border-left table-border-bottom max-w-[20ch] text-ellipsis overflow-hidden whitespace-nowrap p-2 xs:hidden lg:table-cell"
+  >
+    <label for="my-modal-4" class="block cursor-pointer"
+      ><%= clients[i].description.substring(0,25) %></label
     >
   </td>
 </tr>

@@ -23,7 +23,6 @@
   <body class="bg-cultured font-defaultFont">
     <!-- nav bar -->
     <%- include('partials/side-navigation.ejs') -%>
-
     <!-- Content -->
     <section
       class="dashboardContent relative min-h-screen left-[78px] w-[calc(100%-78px)] transition-all duration-500 ease-linear z-10 break-words mr-0 font-defaultFont"
@@ -97,16 +96,30 @@
                 <tr class="">
                   <th class="table-border-left table-border-bottom">ID</th>
                   <th class="table-border-left table-border-bottom">Name</th>
-                  <th class="table-border-left table-border-bottom">Phone</th>
-                  <th class="table-border-left table-border-bottom">Email</th>
-                  <th class="table-border-left table-border-bottom">
+                  <th
+                    class="table-border-left table-border-bottom xs:hidden md:table-cell"
+                  >
+                    Phone
+                  </th>
+                  <th
+                    class="table-border-left table-border-bottom xs:hidden md:table-cell"
+                  >
+                    Email
+                  </th>
+                  <th
+                    class="table-border-left table-border-bottom xs:hidden md:table-cell"
+                  >
                     Person or Company
                   </th>
                   <th class="table-border-left table-border-bottom">Address</th>
-                  <th class="table-border-left table-border-bottom">
+                  <th
+                    class="table-border-left table-border-bottom xs:hidden lg:table-cell"
+                  >
                     Created At
                   </th>
-                  <th class="table-border-left table-border-bottom">
+                  <th
+                    class="table-border-left table-border-bottom xs:hidden lg:table-cell"
+                  >
                     Description
                   </th>
                 </tr>
@@ -120,5 +133,6 @@
       </main>
     </section>
     <script src="js/sidenav.js"></script>
+    <script src="js/clients.js"></script>
   </body>
 </html>
