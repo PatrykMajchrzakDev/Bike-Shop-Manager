@@ -1,4 +1,5 @@
 const Clients = require("../models/Clients");
+// import { modalData } from "../public/js/clients";
 
 module.exports = {
   addNewClient: async (req, res) => {
@@ -16,12 +17,25 @@ module.exports = {
       console.log(err);
     }
   },
+  updateClient: async (req, res) => {
+    try {
+      await Clients.findOneAndUpdate(
+        {
+          _id: modalData[0],
+        },
+        {
+          name: modalData[2],
+          phone: modalData[3],
+          address: modalData[6],
+          email: modalData[4],
+          description: modalData[8],
+          personOrCompany: modalData[5],
+        }
+      );
+      console.log("Edited client");
+      res.redirect("/clients");
+    } catch (err) {
+      console.log(err);
+    }
+  },
 };
-// getAllClients: async (req, res) => {
-//   try {
-//     const clients = await Clients.find().sort({ name: "desc" }).lean();
-//     res.render("partials/_clientTable");
-//   } catch (err) {
-//     console.log(err);
-//   }
-// },

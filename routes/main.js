@@ -14,6 +14,7 @@ router.get("/clients", ensureAuth, dashboardController.getClients);
 
 //Client routes
 router.post("/createClient", clientsController.addNewClient);
+router.put("/update-client", clientsController.updateClient);
 
 //auth
 router.get("/logout", authController.logout);

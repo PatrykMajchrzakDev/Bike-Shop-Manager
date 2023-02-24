@@ -1,8 +1,13 @@
 <% for(var i = 0; i < clients.length; i++){ %>
-<tr class="hover:bg-lightGray hover:text-white">
-  <%- include('../partials/clientInfo.ejs', {num:i}) -%>
+<tr class="hover:bg-lightGray hover:text-white" id="<%='tableRow' + i%>">
+  <%- include('../partials/clientInfo.ejs', {num:i, clients: clients}) -%>
   <td class="text-center table-border-left table-border-bottom p-2">
-    <label for="my-modal-4" class="block cursor-pointer"><%= i + 1 %></label>
+    <label
+      for="my-modal-4"
+      class="block cursor-pointer"
+      data-dbid="<%= clients[i]._id %>"
+      ><%= i + 1 %></label
+    >
   </td>
   <td class="text-center table-border-left table-border-bottom p-2">
     <label for="my-modal-4" class="block cursor-pointer"

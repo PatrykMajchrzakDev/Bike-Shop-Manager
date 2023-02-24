@@ -2764,6 +2764,10 @@ html {
   margin-bottom: 1rem;
 }
 
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
 .mr-\[5px\] {
   margin-right: 5px;
 }
@@ -2774,14 +2778,6 @@ html {
 
 .ml-\[10px\] {
   margin-left: 10px;
-}
-
-.mt-5 {
-  margin-top: 1.25rem;
-}
-
-.mt-3 {
-  margin-top: 0.75rem;
 }
 
 .block {
@@ -2860,24 +2856,16 @@ html {
   width: 66.666667%;
 }
 
+.w-3\/4 {
+  width: 75%;
+}
+
 .w-\[78px\] {
   width: 78px;
 }
 
 .w-11 {
   width: 2.75rem;
-}
-
-.w-3\/4 {
-  width: 75%;
-}
-
-.w-3\/5 {
-  width: 60%;
-}
-
-.w-4\/5 {
-  width: 80%;
 }
 
 .min-w-\[50px\] {
@@ -3130,11 +3118,6 @@ html {
   padding-right: 6px;
 }
 
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
 .pl-5 {
   padding-left: 1.25rem;
 }
@@ -3206,10 +3189,6 @@ html {
 
 .font-medium {
   font-weight: 500;
-}
-
-.font-bold {
-  font-weight: 700;
 }
 
 .leading-\[50px\] {
