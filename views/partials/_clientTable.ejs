@@ -1,6 +1,10 @@
+<!-- Loop through all clients in db and display info in table rows -->
 <% for(var i = 0; i < clients.length; i++){ %>
 <tr class="hover:bg-lightGray hover:text-white" id="<%='tableRow' + i%>">
+  <!-- This include is modal popup that updates client-->
   <%- include('../partials/clientInfo.ejs', {num:i, clients: clients}) -%>
+
+  <!-- Table row that dislays all clients from new to old create date -->
   <td class="text-center table-border-left table-border-bottom p-2">
     <label
       for="my-modal-4"
