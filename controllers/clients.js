@@ -1,5 +1,4 @@
 const Clients = require("../models/Clients");
-// import { modalData } from "../public/js/clients";
 
 module.exports = {
   addNewClient: async (req, res) => {
@@ -19,21 +18,24 @@ module.exports = {
   },
   updateClient: async (req, res) => {
     try {
+      //Modal data is taken from public/js/clients.js
       await Clients.findOneAndUpdate(
         {
-          _id: modalData[0],
+          _id: req.body.modalData.clientID,
         },
         {
-          name: modalData[2],
-          phone: modalData[3],
-          address: modalData[6],
-          email: modalData[4],
-          description: modalData[8],
-          personOrCompany: modalData[5],
+          name: req.body.modalData.name,
+          phone: req.body.modalData.phone,
+          email: req.body.modalData.email,
+          personOrCompany: req.body.modalData.personOrCompany,
+          address: req.body.modalData.address,
+          description: req.body.modalData.description,
+        },
+        {
+          new: true,
         }
       );
-      console.log("Edited client");
-      res.redirect("/clients");
+      res.json("Marked Complete");
     } catch (err) {
       console.log(err);
     }

@@ -3,6 +3,16 @@ const rows = document.querySelectorAll("table tr");
 
 // Get the modal popup element and its close button
 const modal = document.getElementsByClassName(".modal.box");
+let clientID;
+
+// select clicked table row infos
+const clientsName = document.querySelector("#ClientsNameInfo");
+const clientsPhone = document.querySelector("#ClientsPhoneInfo");
+const clientsEmail = document.querySelector("#ClientsEmailInfo");
+const clientsAddress = document.querySelector("#ClientsAddressInfo");
+const personOrCompanyRadio2 = document.querySelector("#radio-2");
+const personOrCompanyRadio3 = document.querySelector("#radio-3");
+const clientsDescription = document.querySelector("#ClientsDescriptionInfo");
 
 // Add a click event listener to each row
 rows.forEach((row) => {
@@ -12,24 +22,13 @@ rows.forEach((row) => {
 
     // Create an array of the cell contents
     const cellContents = [];
+    clientID = cells[0].firstElementChild.dataset.dbid;
     cellContents.unshift(cells[0].firstElementChild.dataset.dbid);
 
     cells.forEach((cell) => {
       //   console.log(cell.innerText.trim());
       cellContents.push(cell.innerText.trim());
     });
-    console.log(cellContents);
-
-    // select clicked table row infos
-    const clientsName = document.querySelector("#ClientsNameInfo");
-    const clientsPhone = document.querySelector("#ClientsPhoneInfo");
-    const clientsEmail = document.querySelector("#ClientsEmailInfo");
-    const clientsAddress = document.querySelector("#ClientsAddressInfo");
-    const personOrCompanyRadio2 = document.querySelector("#radio-2");
-    const personOrCompanyRadio3 = document.querySelector("#radio-3");
-    const clientsDescription = document.querySelector(
-      "#ClientsDescriptionInfo"
-    );
 
     //Set values to modal popup
     clientsName.value = cellContents[2];
@@ -43,6 +42,39 @@ rows.forEach((row) => {
     } else {
       personOrCompanyRadio3.checked = true;
     }
-    modalData = cellContents;
   });
 });
+document
+  .querySelector("#submitUpdateClientButton")
+  .addEventListener("click", updateClient);
+
+async function updateClient() {
+  try {
+    console.log(clientsName.value);
+    let isPerson = "";
+    personOrCompanyRadio2.checked
+      ? (isPerson = "Person")
+      : (isPerson = "Company");
+
+    modalData = {
+      name: clientsName.value,
+      phone: clientsPhone.value,
+      email: clientsEmail.value,
+      address: clientsAddress.value,
+      description: clientsDescription.value,
+      clientID: clientID,
+      personOrCompany: isPerson,
+    };
+    const response = await fetch("/updateClient", {
+      method: "put",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({
+        modalData: modalData,
+      }),
+    });
+    const data = await response.json();
+    location.reload();
+  } catch (err) {
+    console.log(err);
+  }
+}

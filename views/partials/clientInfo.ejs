@@ -13,8 +13,8 @@
         <span>Use the below form to edit a client</span>
         <form
           class="flex flex-col items-start w-full"
-          action="/update-client"
-          method="POST"
+          action=""
+          method=""
           id="editClientsInfoForm"
         >
           <!-- Name -->
@@ -25,7 +25,6 @@
               class="w-full bg-cultured rounded-md border border-lightGray py-1 text-black"
               id="ClientsNameInfo"
               name="name"
-              value=""
             />
           </div>
           <!-- Phone -->
@@ -36,7 +35,6 @@
               class="w-full bg-cultured rounded-md border border-lightGray py-1"
               id="ClientsPhoneInfo"
               name="phone"
-              value=""
             />
           </div>
           <!-- Email -->
@@ -47,7 +45,6 @@
               class="w-full bg-cultured rounded-md border border-lightGray py-1"
               id="ClientsEmailInfo"
               name="email"
-              value=""
             />
           </div>
           <!-- Address -->
@@ -58,7 +55,6 @@
               class="w-full bg-cultured rounded-md border border-lightGray py-1"
               id="ClientsAddressInfo"
               name="address"
-              value=""
             />
           </div>
           <!-- Radio buttons -->
@@ -97,9 +93,9 @@
           </div>
           <!-- Save button -->
           <button
-            type="submit"
             class="text-base text-white font-medium cursor-pointer h-auto px-8 py-3 bg-blue rounded-3xl m-none"
-            form="editClientsInfoForm"
+            form=""
+            id="submitUpdateClientButton"
           >
             Save
           </button>
