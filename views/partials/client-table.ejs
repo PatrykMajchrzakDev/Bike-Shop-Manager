@@ -1,0 +1,63 @@
+<!-- Loop through all clients in db and display info in table rows -->
+<% for(var i = 0; i < clients.length; i++){ %>
+<tr class="hover:bg-lightGray hover:text-white" id="<%='tableRow' + i%>">
+  <!-- This include is modal popup that updates client-->
+  <%- include('../partials/client-info.ejs', {num:i, clients: clients}) -%>
+
+  <!-- Table row that dislays all clients from new to old create date -->
+  <td class="text-center table-border-left table-border-bottom p-2">
+    <label
+      for="my-modal-4"
+      class="block cursor-pointer"
+      id="clientsID"
+      data-dbid="<%= clients[i]._id %>"
+      ><%= i + 1 %></label
+    >
+  </td>
+  <td class="text-center table-border-left table-border-bottom p-2">
+    <label for="my-modal-4" class="block cursor-pointer"
+      ><%= clients[i].name %></label
+    >
+  </td>
+  <td
+    class="text-center table-border-left table-border-bottom p-2 xs:hidden md:table-cell"
+  >
+    <label for="my-modal-4" class="block cursor-pointer"
+      ><%= clients[i].phone %></label
+    >
+  </td>
+  <td
+    class="text-center table-border-left table-border-bottom p-2 xs:hidden md:table-cell"
+  >
+    <label for="my-modal-4" class="block cursor-pointer"
+      ><%= clients[i].email %></label
+    >
+  </td>
+  <td
+    class="text-center table-border-left table-border-bottom p-2 xs:hidden md:table-cell"
+  >
+    <label for="my-modal-4" class="block cursor-pointer"
+      ><%= clients[i].personOrCompany %></label
+    >
+  </td>
+  <td class="text-center table-border-left table-border-bottom p-2">
+    <label for="my-modal-4" class="block cursor-pointer"
+      ><%= clients[i].address %></label
+    >
+  </td>
+  <td
+    class="text-center table-border-left table-border-bottom max-w-[20ch] text-ellipsis overflow-hidden whitespace-nowrap p-2 xs:hidden lg:table-cell"
+  >
+    <label for="my-modal-4" class="block cursor-pointer"
+      ><%= clients[i].createdAt.toString().substring(0,25) %></label
+    >
+  </td>
+  <td
+    class="text-center table-border-left table-border-bottom max-w-[20ch] text-ellipsis overflow-hidden whitespace-nowrap p-2 xs:hidden lg:table-cell"
+  >
+    <label for="my-modal-4" class="block cursor-pointer"
+      ><%= clients[i].description.substring(0,25) %></label
+    >
+  </td>
+</tr>
+<% }%>
