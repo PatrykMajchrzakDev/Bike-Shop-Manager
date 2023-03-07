@@ -17,14 +17,13 @@
   <body class="bg-cultured font-defaultFont">
     <!-- nav bar -->
     <%- include('partials/side-navigation.ejs') -%>
-
     <!-- Content -->
     <section
       class="dashboardContent relative min-h-screen left-[78px] w-[calc(100%-78px)] transition-all duration-500 ease-linear z-10 break-words mr-0 font-defaultFont"
     >
       <!-- Header -->
       <header class="flex shadow-md justify-between items-center h-[50px]">
-        <h2 class="pl-5 xs:text-lg sm:text-3xl">Dashboard</h2>
+        <h2 class="pl-5 xs:text-lg sm:text-3xl">Add new client</h2>
         <!-- Search box -->
         <div class="relative text-lg w-52 xs:w-32 xs:mr-7 sm:mr-32 md:mr-40">
           <i
@@ -39,41 +38,14 @@
         </div>
       </header>
       <main class="p-5">
-        <!-- Orders notifications -->
-        <section
-          class="flex sm:flex-row xs:items-center xs:flex-col sm:justify-end"
+        <!-- Go back button -->
+        <div
+          class="bg-green-500 rounded-md w-32 p-2 text-white mt-8 flex justify-center mr-4"
         >
-          <!-- Green notification -->
-          <a href="#">
-            <div
-              class="flex flex-row text-white bg-green-500 h-16 m-5 p-3 rounded-lg w-[200px] xs:m-2"
-            >
-              <i
-                class="fa-solid fa-wrench text-2xl m-1 grow-[1] text-center"
-              ></i>
-              <div class="flex justify-center flex-col grow-[2] items-center">
-                <h3># orders</h3>
-                <h3>My orders</h3>
-              </div>
-            </div>
-          </a>
-
-          <!-- Red notification -->
-          <a href="#">
-            <div
-              class="flex flex-row text-white bg-red-500 h-16 m-5 p-3 rounded-lg w-[200px] xs:m-2"
-            >
-              <i class="fa-solid fa-fire text-2xl m-1 grow-[1] text-center"></i>
-              <div class="flex justify-center flex-col grow-[2] items-center">
-                <h3># work orders</h3>
-                <h3>Urgent</h3>
-              </div>
-            </div>
-          </a>
-        </section>
-
+          <a href="/clients">Back</a>
+        </div>
         <!-- Add user form -->
-        <section class="w-2/3 mx-auto mt-20 flex text-lightGray">
+        <section class="w-1/2 mx-auto mt-20 flex text-lightGray">
           <!-- Intro -->
           <div class="w-full flex flex-col">
             <h2>New Client</h2>
