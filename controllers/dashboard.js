@@ -16,6 +16,13 @@ module.exports = {
       console.log(err);
     }
   },
+  newOrder: async (req, res) => {
+    try {
+      res.render("new-order.ejs");
+    } catch (err) {
+      console.log(err);
+    }
+  },
   getClients: async (req, res) => {
     try {
       const clients = await Clients.find().sort({ createdAt: "desc" }).lean();
