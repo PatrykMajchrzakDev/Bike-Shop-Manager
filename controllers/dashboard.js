@@ -26,7 +26,9 @@ module.exports = {
   getClients: async (req, res) => {
     try {
       const clients = await Clients.find().sort({ createdAt: "desc" }).lean();
-      res.render("clients.ejs", { clients: clients });
+      res.render("clients.ejs", {
+        clients: clients,
+      });
     } catch (err) {
       console.log(err);
     }

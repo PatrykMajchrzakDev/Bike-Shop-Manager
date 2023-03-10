@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { format } = require("date-fns");
 
 //this is how schematic of db will look like
 const ClientSchema = new mongoose.Schema({
@@ -32,8 +33,8 @@ const ClientSchema = new mongoose.Schema({
     ref: "Client",
   },
   createdAt: {
-    type: Date,
-    default: Date.now,
+    type: String,
+    default: format(new Date(), "dd/MM/yyyy"),
   },
 });
 

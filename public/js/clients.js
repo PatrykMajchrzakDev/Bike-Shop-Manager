@@ -37,6 +37,7 @@ rows.forEach((row) => {
     clientsAddress.value = cellContents[6];
     clientsDescription.value = cellContents[8];
 
+    //Mark radio button based if client is person or company
     if (cellContents[5] === "Person") {
       personOrCompanyRadio2.checked = true;
     } else {
@@ -44,13 +45,15 @@ rows.forEach((row) => {
     }
   });
 });
+
+//Update client button
 document
   .querySelector("#submitUpdateClientButton")
   .addEventListener("click", updateClient);
 
+//PUT request to update existing user
 async function updateClient() {
   try {
-    console.log(clientsName.value);
     let isPerson = "";
     personOrCompanyRadio2.checked
       ? (isPerson = "Person")
@@ -78,3 +81,34 @@ async function updateClient() {
     console.log(err);
   }
 }
+
+//Search bar functionality
+const searchInput = document.querySelector("[data-search]");
+let clients = [];
+
+async function getClientsFromDB() {
+  try {
+    const response = await fetch("/api/clients");
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+async function getClientsList() {
+  try {
+    clients = await getClientsFromDB();
+  } catch (error) {
+    throw error;
+  }
+}
+
+getClientsList();
+
+searchInput.addEventListener("input", (e) => {
+  const value = e.target.value.toLowerCase();
+  clients.forEach((client) => {
+    console.log(client);
+  });
+});

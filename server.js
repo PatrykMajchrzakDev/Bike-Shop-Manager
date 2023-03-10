@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const passport = require("passport");
 const mainRoutes = require("./routes/main");
+const apiRoutes = require("./routes/api");
 const connectDB = require("./config/database");
 const flash = require("express-flash");
 const logger = require("morgan");
@@ -50,6 +51,7 @@ app.use(passport.session());
 
 //Setup Routes for which the server is listening
 app.use("/", mainRoutes);
+app.use("/api", apiRoutes);
 
 //Server Running
 app.listen(process.env.PORT, () => {
