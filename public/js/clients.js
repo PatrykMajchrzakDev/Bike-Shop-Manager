@@ -82,10 +82,11 @@ async function updateClient() {
   }
 }
 
-//Search bar functionality
+// ========= Search bar functionality =========
 const searchInput = document.querySelector("[data-search]");
 let clients = [];
 
+//Fetch clients from db
 async function getClientsFromDB() {
   try {
     const response = await fetch("/api/clients");
@@ -96,6 +97,7 @@ async function getClientsFromDB() {
   }
 }
 
+//Function to save clients db document as variable
 async function getClientsList() {
   try {
     clients = await getClientsFromDB();
@@ -104,11 +106,36 @@ async function getClientsList() {
   }
 }
 
-getClientsList();
+//Saves clients db document as variable
+searchInput.addEventListener("click", getClientsList);
 
+// //Search input functionality. Add "hidden" class to element which doesnt have text context of inputted letter / number
 searchInput.addEventListener("input", (e) => {
+  //Grabs search bar input value
   const value = e.target.value.toLowerCase();
-  clients.forEach((client) => {
-    console.log(client);
-  });
+  //Grabs all tbody children (table rows)
+  let tableRowClient = document.querySelector("tbody").children;
+
+  //Loop through all table rows and checks if table row name, phone, address matches inputted value
+  for (let i = 0; i < tableRowClient.length; i++) {
+    let tableRowNumber = document.querySelector(`#tableRow${i}`);
+    const isVisible =
+      //name
+      tableRowNumber.children[1].textContent
+        .toLowerCase()
+        .trim()
+        .includes(value) ||
+      //phone
+      tableRowNumber.children[2].textContent
+        .toLowerCase()
+        .trim()
+        .includes(value) ||
+      //address
+      tableRowNumber.children[5].textContent
+        .toLowerCase()
+        .trim()
+        .includes(value);
+    //if doesnt match then add 'hidden' class
+    tableRowClient[i].classList.toggle("hidden", !isVisible);
+  }
 });
