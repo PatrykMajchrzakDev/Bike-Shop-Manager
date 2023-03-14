@@ -10,7 +10,7 @@ const clientsController = require("../controllers/clients");
 router.get("/", homeController.getIndex);
 router.get("/dashboard", ensureAuth, dashboardController.getDashboard);
 router.get("/new-client", ensureAuth, dashboardController.newClient);
-router.get("/new-order", ensureAuth, dashboardController.newClient);
+router.get("/new-order", ensureAuth, dashboardController.newOrder);
 router.get("/clients", ensureAuth, dashboardController.getClients);
 
 //Client routes
