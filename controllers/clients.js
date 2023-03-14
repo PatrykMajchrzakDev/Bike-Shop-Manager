@@ -4,12 +4,12 @@ module.exports = {
   addNewClient: async (req, res) => {
     try {
       await Clients.create({
-        name: req.body.name,
-        phone: req.body.phone,
-        email: req.body.email,
-        personOrCompany: req.body.personOrCompany,
-        address: req.body.address,
-        description: req.body.description,
+        name: req.body.name.trim(),
+        phone: req.body.phone.trim(),
+        email: req.body.email.trim(),
+        personOrCompany: req.body.personOrCompany.trim(),
+        address: req.body.address.trim(),
+        description: req.body.description.trim(),
       });
       res.redirect("/dashboard");
     } catch (err) {
@@ -24,12 +24,12 @@ module.exports = {
           _id: req.body.modalData.clientID,
         },
         {
-          name: req.body.modalData.name,
-          phone: req.body.modalData.phone,
-          email: req.body.modalData.email,
-          personOrCompany: req.body.modalData.personOrCompany,
-          address: req.body.modalData.address,
-          description: req.body.modalData.description,
+          name: req.body.modalData.name.trim(),
+          phone: req.body.modalData.phone.trim(),
+          email: req.body.modalData.email.trim(),
+          personOrCompany: req.body.modalData.personOrCompany.trim(),
+          address: req.body.modalData.address.trim(),
+          description: req.body.modalData.description.trim(),
         },
         {
           new: true,
