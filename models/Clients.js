@@ -34,7 +34,7 @@ const ClientSchema = new mongoose.Schema({
   },
   createdAt: {
     type: String,
-    default: format(new Date(), "dd/MM/yyyy"),
+    default: format(new Date(), "dd-MM-yyyy"),
   },
 });
 
