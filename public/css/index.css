@@ -2641,12 +2641,79 @@ html {
   left: 240px;
 }
 
+/* Add border line to the side of table */
+
 .table-border-left {
   border-left: 2px solid gray;
 }
 
 .table-border-bottom {
   border-bottom: 2px solid gray;
+}
+
+input[type="date"] {
+  position: relative;
+}
+
+/* create a new arrow, because we are going to mess up the native one */
+
+input[type="date"]:after {
+  content: "\25BC";
+  color: #555;
+  padding: 0 5px;
+}
+
+/* change color of symbol on hover */
+
+input[type="date"]:hover:after {
+  color: blue;
+}
+
+/* make the native arrow invisible and stretch it over the whole field so you can click anywhere in the input field to trigger the native datepicker*/
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  color: transparent;
+  background: transparent;
+}
+
+/* adjust increase/decrease button */
+
+input[type="date"]::-webkit-inner-spin-button {
+  z-index: 1;
+}
+
+/* adjust clear button */
+
+input[type="date"]::-webkit-clear-button {
+  z-index: 1;
+}
+
+.searchResultList {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.searchResultList div {
+  padding: 5px;
+}
+
+.searchResultList div:hover {
+  background-color: #f7f4f3;
 }
 
 .pointer-events-none {
@@ -2764,6 +2831,10 @@ html {
   margin-bottom: 0.75rem;
 }
 
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -2782,6 +2853,10 @@ html {
 
 .block {
   display: block;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 .inline {
@@ -3088,6 +3163,11 @@ html {
   padding-bottom: 0.25rem;
 }
 
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -3277,6 +3357,11 @@ html {
 .placeholder\:text-lightGray::placeholder {
   --tw-text-opacity: 1;
   color: rgb(52 56 66 / var(--tw-text-opacity));
+}
+
+.hover\:bg-cultured:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(247 244 243 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-lightGray:hover {

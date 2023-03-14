@@ -51,12 +51,43 @@
             <h2>New Order</h2>
             <span>Use the below form to create a new order</span>
             <form
-              class="flex flex-col items-start w-full mt-4"
+              class="flex flex-col items-start w-full mt-6"
               action="/createOrder"
               method="POST"
             >
               <!--  -->
 
+              <div class="mb-3 w-full relative inline-block">
+                <label for="client" class="">Pick a client</label>
+                <input
+                  type="text"
+                  class="w-full bg-cultured rounded-md border border-lightGray py-1"
+                  name="client"
+                  placeholder="Type to search..."
+                  oninput="searchClients()"
+                  data-searchForClientsInput
+                />
+                <div class="searchResultList"></div>
+              </div>
+              <div class="mb-3 w-full">
+                <label for="description" class="">Description</label>
+                <textarea
+                  type="text"
+                  class="w-full h-24 bg-cultured rounded-md border border-lightGray py-1"
+                  id="description"
+                  name="description"
+                ></textarea>
+              </div>
+              <!-- Date input is styled in src/input.css -->
+              <div class="mb-3 w-full flex flex-col">
+                <label for="dueDate">Pick due date</label>
+                <input
+                  type="date"
+                  class="bg-cultured px-1 rounded-md border"
+                  name="dueDate"
+                  id="dueDateValue"
+                />
+              </div>
               <!-- Save button -->
               <button
                 type="submit"
@@ -71,5 +102,6 @@
       </main>
     </section>
     <script src="js/sidenav.js"></script>
+    <script src="js/newOrder.js"></script>
   </body>
 </html>
