@@ -1,0 +1,82 @@
+<!-- This is a modal popup for editing order -->
+<input type="checkbox" id="my-modal-4" class="modal-toggle" />
+<label
+  for="my-modal-4"
+  class="modal cursor-pointer left-[78px] w-[calc(100%-78px)]"
+>
+  <label class="modal-box relative bg-white" for="">
+    <!-- Add order form -->
+    <section class="w-3/4 mx-auto flex text-black">
+      <!-- Intro -->
+      <div class="w-full flex flex-col">
+        <h2>Edit Order</h2>
+        <span>Use the below form to edit an order</span>
+        <form
+          class="flex flex-col items-start w-full"
+          action=""
+          method=""
+          id="editOrdersInfoForm"
+        >
+          <!-- Status -->
+          <div class="mb-3 w-full">
+            <label for="status" class="">Status</label>
+            <input
+              type="text"
+              class="w-full bg-cultured rounded-md border border-lightGray py-1"
+              id="OrderStatusInfo"
+              name="phone"
+            />
+          </div>
+          <!-- Due date -->
+          <div class="mb-3 w-full mt-5">
+            <label for="dueDate">Due date</label>
+            <input
+              type="date"
+              class="w-full bg-cultured rounded-md border border-lightGray py-1 text-black"
+              id="OrderDueDateInfo"
+              name="dueDate"
+            />
+          </div>
+          <!-- Service -->
+          <div class="mb-3 w-full">
+            <label for="service" class="">Service</label>
+            <input
+              type="text"
+              class="w-full bg-cultured rounded-md border border-lightGray py-1"
+              id="OrderServiceInfo"
+              name="service"
+            />
+          </div>
+          <!-- Client -->
+          <div class="mb-3 w-full">
+            <label for="client" class="">Client</label>
+            <input
+              type="text"
+              class="w-full bg-cultured rounded-md border border-lightGray py-1"
+              id="OrderClientInfo"
+              name="client"
+            />
+          </div>
+          <!-- Description -->
+          <div class="mb-3 w-full mt-4">
+            <label for="description" class="">Description</label>
+            <textarea
+              type="text"
+              class="w-full h-24 bg-cultured rounded-md border border-lightGray py-1"
+              id="OrdersDescriptionInfo"
+              name="description"
+            ></textarea>
+          </div>
+          <!-- Save button -->
+          <button
+            class="text-base text-white font-medium cursor-pointer h-auto px-8 py-3 bg-blue rounded-3xl m-none"
+            form=""
+            id="submitUpdateOrderButton"
+          >
+            Save
+          </button>
+        </form>
+      </div>
+    </section>
+  </label>
+</label>

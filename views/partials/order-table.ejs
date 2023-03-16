@@ -1,0 +1,45 @@
+<!-- Loop through all orders in db and display info in table rows -->
+<% for(var i = 0; i < orders.length; i++){ %>
+<tr class="hover:bg-lightGray hover:text-white" id="<%='tableRow' + i%>">
+  <!-- This include is modal popup that updates orders-->
+  <%- include('../partials/order-info.ejs', {num:i, orders: orders}) -%>
+
+  <!-- Table row that dislays all orders from new to old create date -->
+  <td class="text-center table-border-bottom p-2">
+    <label
+      for="my-modal-4"
+      class="block cursor-pointer"
+      id="ordersID"
+      data-dbid="<%= orders[i]._id %>"
+      ><%= i + 1 %></label
+    >
+  </td>
+  <td class="text-center table-border-bottom p-2 xs:hidden md:table-cell">
+    <label for="my-modal-4" class="block cursor-pointer"
+      ><%= orders[i].status %></label
+    >
+  </td>
+  <td class="text-center table-border-bottom p-2">
+    <label for="my-modal-4" class="block cursor-pointer"
+      ><%= orders[i].dueDate %></label
+    >
+  </td>
+  <td class="text-center table-border-bottom p-2 xs:hidden md:table-cell">
+    <label for="my-modal-4" class="block cursor-pointer"
+      ><%= orders[i].service %></label
+    >
+  </td>
+  <td class="text-center table-border-bottom p-2">
+    <label for="my-modal-4" class="block cursor-pointer"
+      ><%= orders[i].client %></label
+    >
+  </td>
+  <td
+    class="text-center table-border-bottom max-w-[20ch] text-ellipsis overflow-hidden whitespace-nowrap p-2 xs:hidden lg:table-cell"
+  >
+    <label for="my-modal-4" class="block cursor-pointer"
+      ><%= orders[i].description.substring(0,22) + '...' %></label
+    >
+  </td>
+</tr>
+<% }%>

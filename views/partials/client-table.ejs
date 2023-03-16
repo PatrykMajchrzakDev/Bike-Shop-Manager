@@ -5,7 +5,7 @@
   <%- include('../partials/client-info.ejs', {num:i, clients: clients}) -%>
 
   <!-- Table row that dislays all clients from new to old create date -->
-  <td class="text-center table-border-left table-border-bottom p-2">
+  <td class="text-center table-border-bottom p-2">
     <label
       for="my-modal-4"
       class="block cursor-pointer"
@@ -14,46 +14,40 @@
       ><%= i + 1 %></label
     >
   </td>
-  <td class="text-center table-border-left table-border-bottom p-2">
+  <td class="text-center table-border-bottom p-2">
     <label for="my-modal-4" class="block cursor-pointer"
       ><%= clients[i].name %></label
     >
   </td>
-  <td
-    class="text-center table-border-left table-border-bottom p-2 xs:hidden md:table-cell"
-  >
+  <td class="text-center table-border-bottom p-2 xs:hidden md:table-cell">
     <label for="my-modal-4" class="block cursor-pointer"
       ><%= clients[i].phone %></label
     >
   </td>
-  <td
-    class="text-center table-border-left table-border-bottom p-2 xs:hidden md:table-cell"
-  >
+  <td class="text-center table-border-bottom p-2 xs:hidden md:table-cell">
     <label for="my-modal-4" class="block cursor-pointer"
       ><%= clients[i].email %></label
     >
   </td>
-  <td
-    class="text-center table-border-left table-border-bottom p-2 xs:hidden md:table-cell"
-  >
+  <td class="text-center table-border-bottom p-2 xs:hidden md:table-cell">
     <label for="my-modal-4" class="block cursor-pointer"
       ><%= clients[i].personOrCompany %></label
     >
   </td>
-  <td class="text-center table-border-left table-border-bottom p-2">
+  <td class="text-center table-border-bottom p-2">
     <label for="my-modal-4" class="block cursor-pointer"
       ><%= clients[i].address %></label
     >
   </td>
   <td
-    class="text-center table-border-left table-border-bottom max-w-[20ch] text-ellipsis overflow-hidden whitespace-nowrap p-2 xs:hidden lg:table-cell"
+    class="text-center table-border-bottom max-w-[20ch] text-ellipsis overflow-hidden whitespace-nowrap p-2 xs:hidden lg:table-cell"
   >
     <label for="my-modal-4" class="block cursor-pointer"
       ><%= clients[i].createdAt.toString().substring(0,25) %></label
     >
   </td>
   <td
-    class="text-center table-border-left table-border-bottom max-w-[20ch] text-ellipsis overflow-hidden whitespace-nowrap p-2 xs:hidden lg:table-cell"
+    class="text-center table-border-bottom max-w-[20ch] text-ellipsis overflow-hidden whitespace-nowrap p-2 xs:hidden lg:table-cell"
   >
     <label for="my-modal-4" class="block cursor-pointer"
       ><%= clients[i].description.substring(0,25) %></label

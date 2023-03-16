@@ -53,17 +53,20 @@
           <!-- STUFF TO DISPLAY -->
           <!-- form handling -->
           <form action="/" method="GET" class="w-full flex">
-            <table class="flex justify-around grow">
-              <thead class="flex justify-around grow">
-                <tr class="flex justify-around grow">
-                  <th>ID</th>
-                  <th>Due date</th>
-                  <th>Status</th>
-                  <th>Service</th>
-                  <th>Description</th>
+            <table class="grow">
+              <thead class="">
+                <tr class="">
+                  <th class="table-border-bottom">ID</th>
+                  <th class="table-border-bottom">Status</th>
+                  <th class="table-border-bottom">Due date</th>
+                  <th class="table-border-bottom">Service</th>
+                  <th class="table-border-bottom">Client</th>
+                  <th class="table-border-bottom">Description</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+                <%- include('partials/order-table.ejs') %>
+              </tbody>
             </table>
           </form>
         </div>
