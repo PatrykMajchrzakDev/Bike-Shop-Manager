@@ -1,19 +1,6 @@
-DONE:
-1. connected to db, 
-2. very simple starting page
-
-
 TODO:
-1. auth
-2. main site
-3. client database
-4. work order managment
+1.Add a way to remove clients / orders
 5. sales
-
-
-NEXT TIME TO DO:
-For 2. Tailwind CLI setup
-
 
 EXPAND:
 1. forgot password option

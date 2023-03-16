@@ -3,9 +3,17 @@
 @tailwind utilities;
 
 @layer components {
+  /* ======================= */
+  /* Hamburger styling */
+  /* ======================= */
+
   .hamburger {
     @apply absolute text-white left-1/2 top-[6px] text-[20px] h-[50px] w-[50px] text-center leading-[50px] -translate-x-1/2;
   }
+
+  /* ======================= */
+  /* Sidenav styling */
+  /* ======================= */
   .side-nav-li {
     @apply relative h-[50px] w-full mx-[5px] list-none leading-[50px];
   }
@@ -33,6 +41,10 @@
   .sidebar.sidenavActive .linkName {
     @apply opacity-100 pointer-events-auto;
   }
+
+  /* ======================= */
+  /* Tooltip displayed when hover over sidenav list items */
+  /* ======================= */
   .tooltipHover {
     @apply left-[110%] absolute rounded-xl h-[35px] w-[122px] bg-white leading-9 text-center opacity-0 shadow-md pointer-events-none;
   }
@@ -43,6 +55,10 @@
   .sidebar.sidenavActive ul li:hover .tooltipHover {
     @apply opacity-0;
   }
+
+  /* ======================= */
+  /* Sidebar bottom profile content */
+  /* ======================= */
   .sidebar.sidenavActive .navbarProfileContent {
     @apply opacity-100 pointer-events-auto;
   }
@@ -53,7 +69,11 @@
     width: calc(100% - 240px);
     left: 240px;
   }
+
+  /* ======================= */
   /* Add border line to the side of table */
+  /* ======================= */
+
   .table-border-left {
     border-left: 2px solid gray;
   }
@@ -63,6 +83,10 @@
   .table-border-bottom {
     border-bottom: 2px solid gray;
   }
+
+  /* ======================= */
+  /* Date form styling to make form clickable everywhere */
+  /* ======================= */
   input[type="date"] {
     position: relative;
   }
@@ -101,6 +125,10 @@
   input[type="date"]::-webkit-clear-button {
     z-index: 1;
   }
+
+  /* ======================= */
+  /* Search bar - styling for new divs when fetched clients */
+  /* ======================= */
   .searchResultList {
     position: absolute;
     top: 100%;
