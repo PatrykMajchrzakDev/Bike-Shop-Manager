@@ -11,7 +11,7 @@ module.exports = {
         address: req.body.address.trim(),
         description: req.body.description.trim(),
       });
-      res.redirect("/dashboard");
+      res.redirect("/clients");
     } catch (err) {
       console.log(err);
     }

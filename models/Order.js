@@ -4,10 +4,14 @@ const dateFns = require("date-fns");
 //this is how schematic of db will look like
 const OrderSchema = new mongoose.Schema({
   dueDate: {
-    type: Date,
+    type: String,
     required: true,
   },
   status: {
+    type: String,
+    required: true,
+  },
+  client: {
     type: String,
     required: true,
   },
