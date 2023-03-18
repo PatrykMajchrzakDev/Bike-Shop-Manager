@@ -147,4 +147,21 @@
   .searchResultList div:hover {
     background-color: #f7f4f3;
   }
+
+  /* ======================= */
+  /* Status badge styling */
+  /* ======================= */
+
+  .badge-status-new {
+    @apply bg-green-500 text-white rounded-md;
+  }
+  .badge-status-in-progress {
+    @apply bg-yellow-500 text-white rounded-md;
+  }
+  .badge-status-wait-parts {
+    @apply bg-blue text-white rounded-md;
+  }
+  .badge-status-done {
+    @apply bg-lightGray text-white rounded-md;
+  }
 }
