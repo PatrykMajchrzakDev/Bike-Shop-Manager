@@ -15,9 +15,29 @@
     >
   </td>
   <td class="text-center table-border-bottom p-2 xs:hidden md:table-cell">
-    <label for="my-modal-4" class="block cursor-pointer"
-      ><%= orders[i].status %></label
-    >
+    <label for="my-modal-4" class="block cursor-pointer <% switch (orders[i].status) {
+      case "New":
+        %>badge-status-new<%
+        break;
+      case 'Waiting for parts':
+        %>badge-status-wait-parts<%
+        break;
+      case "Client called": %>
+      badge-status-in-progress <%
+      break;
+      case "Done": %>
+      badge-status-done<%
+      break;
+      case 'In progress': %>
+      badge-in-progress<% 
+      break;
+      default:
+        %>default-class<%
+        break;
+    } %>">
+
+    <%= orders[i].status %>
+</label>
   </td>
   <td class="text-center table-border-bottom p-2">
     <label for="my-modal-4" class="block cursor-pointer"
@@ -38,7 +58,7 @@
     class="text-center table-border-bottom max-w-[20ch] text-ellipsis overflow-hidden whitespace-nowrap p-2 xs:hidden lg:table-cell"
   >
     <label for="my-modal-4" class="block cursor-pointer"
-      ><%= orders[i].description.substring(0,22) + '...' %></label
+      ><%= orders[i].description.substring(0,30) + '...' %></label
     >
   </td>
 </tr>
