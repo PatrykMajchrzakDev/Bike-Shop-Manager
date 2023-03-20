@@ -1,16 +1,17 @@
 <!-- This is a modal popup for editing order -->
 <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+<% orderInfo = {} %>
 <label
   for="my-modal-4"
   class="modal cursor-pointer left-[78px] w-[calc(100%-78px)]"
 >
-  <label class="modal-box relative bg-white" for="">
+  <label class="modal-box relative bg-white max-w-[70rem] w-4/5" for="">
     <!-- Add order form -->
-    <section class="w-3/4 mx-auto flex text-black">
+    <section class="w-full mx-auto flex text-black">
       <!-- Intro -->
       <div class="w-full flex flex-col">
         <h2>Edit Order</h2>
-        <span>Use the below form to edit an order</span>
+        <span>Current order ID: <%- orderInfo.currentID %></span>
         <form
           class="flex flex-col items-start w-full"
           action=""

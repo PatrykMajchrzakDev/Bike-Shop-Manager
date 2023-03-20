@@ -3,7 +3,7 @@
 <tr class="hover:bg-lightGray hover:text-white" id="<%='tableRow' + i%>">
   <!-- This include is modal popup that updates orders-->
   <%- include('../partials/order-info.ejs', {num:i, orders: orders}) -%>
-
+  
   <!-- Table row that dislays all orders from new to old create date -->
   <td class="text-center table-border-bottom p-2">
     <label
@@ -51,7 +51,7 @@
   </td>
   <td class="text-center table-border-bottom p-2">
     <label for="my-modal-4" class="block cursor-pointer"
-      ><%= orders[i].client %></label
+      ><%= orders[i].client.name + ' | ' + orders[i].client.phone%></label
     >
   </td>
   <td
