@@ -1,5 +1,5 @@
 TODO:
-0. Make it so i add entire object of client when making new order instead of just clients id
+0. make a get request to read params id from fetch
 1.Add a way to remove clients / orders
 5. sales
 

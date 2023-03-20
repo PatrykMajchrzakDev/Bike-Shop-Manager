@@ -3202,6 +3202,14 @@ input[type="date"]::-webkit-clear-button {
   width: 2.75rem;
 }
 
+.w-4\/5 {
+  width: 80%;
+}
+
+.w-\[90\%\] {
+  width: 90%;
+}
+
 .min-w-\[50px\] {
   min-width: 50px;
 }
@@ -3212,6 +3220,10 @@ input[type="date"]::-webkit-clear-button {
 
 .max-w-\[20ch\] {
   max-width: 20ch;
+}
+
+.max-w-\[70rem\] {
+  max-width: 70rem;
 }
 
 .grow {

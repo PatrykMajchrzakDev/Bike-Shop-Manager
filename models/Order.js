@@ -12,7 +12,7 @@ const OrderSchema = new mongoose.Schema({
     required: true,
   },
   client: {
-    type: String,
+    type: Object,
     required: true,
   },
   description: {

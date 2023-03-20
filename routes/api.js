@@ -4,5 +4,6 @@ const apiController = require("../controllers/api");
 const { ensureAuth } = require("../middleware/passport");
 
 router.get("/clients", apiController.getClients);
+router.get("/clickedOrderInfo", apiController.getClickedOrderInfo);
 
 module.exports = router;

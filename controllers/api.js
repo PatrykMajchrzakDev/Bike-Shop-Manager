@@ -10,4 +10,14 @@ module.exports = {
       console.log(err);
     }
   },
+  getClickedOrderInfo: async (req, res) => {
+    try {
+      const clickedOrderInfo = await Order.findById({
+        _id: req.params,
+      });
+      res.json(clickedOrderInfo);
+    } catch (error) {
+      throw error;
+    }
+  },
 };
