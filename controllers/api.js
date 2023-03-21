@@ -13,7 +13,7 @@ module.exports = {
   getClickedOrderInfo: async (req, res) => {
     try {
       const clickedOrderInfo = await Order.findById({
-        _id: req.params,
+        _id: req.params.id,
       });
       res.json(clickedOrderInfo);
     } catch (error) {
