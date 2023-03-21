@@ -5,13 +5,19 @@
   for="my-modal-4"
   class="modal cursor-pointer left-[78px] w-[calc(100%-78px)]"
 >
-  <label class="modal-box relative bg-white max-w-[70rem] w-4/5" for="">
+  <label
+    class="modal-box relative bg-white max-w-[150rem] w-4/5 text-gray"
+    for=""
+  >
     <!-- Add order form -->
-    <section class="w-full mx-auto flex text-black">
+    <section class="w-full mx-auto flex">
       <!-- Intro -->
       <div class="w-full flex flex-col">
-        <h2>Edit Order</h2>
-        <span>Current order ID: <%- orderInfo.currentID %></span>
+        <h2 class="text-lg">Edit Order</h2>
+        <span class="text-xl mt-4">General info</span>
+        <span class="text-lg mt-1" id="currentOrderID"
+          ><%- orderInfo.currentID %></span
+        >
         <form
           class="flex flex-col items-start w-full"
           action=""
@@ -19,52 +25,62 @@
           id="editOrdersInfoForm"
         >
           <!-- Status -->
-          <div class="mb-3 w-full">
-            <label for="status" class="">Status</label>
-            <input
+          <div class="my-5 w-full">
+            <label for="status mb-2" class="font-defaultFont">Status</label>
+            <select
               type="text"
-              class="w-full bg-cultured rounded-md border border-lightGray py-1"
+              class="select w-full bg-white rounded-md border-lightGray focus:border-blue focus:outline-none font-normal text-[100%]"
               id="OrderStatusInfo"
-              name="phone"
-            />
+              name="status"
+            >
+              <option>New</option>
+              <option>Waiting for parts</option>
+              <option>In progress</option>
+              <option>Client called</option>
+              <option>Done</option>
+            </select>
           </div>
           <!-- Due date -->
-          <div class="mb-3 w-full mt-5">
-            <label for="dueDate">Due date</label>
+          <div class="mb-3 w-full">
+            <label for="dueDate mb-2">Due date</label>
             <input
               type="date"
-              class="w-full bg-cultured rounded-md border border-lightGray py-1 text-black"
+              class="w-full bg-white rounded-md border border-lightGray py-2 pl-3 text-black focus:border-blue focus:outline-none"
               id="OrderDueDateInfo"
               name="dueDate"
             />
           </div>
           <!-- Service -->
           <div class="mb-3 w-full">
-            <label for="service" class="">Service</label>
-            <input
+            <label for="service mb-2" class="">Service</label>
+            <select
               type="text"
-              class="w-full bg-cultured rounded-md border border-lightGray py-1"
+              class="select w-full bg-white rounded-md border border-lightGray py-2 pl-3 focus:border-blue focus:outline-none font-normal text-[100%]"
               id="OrderServiceInfo"
               name="service"
-            />
+            >
+              <option>Repair</option>
+              <option>Buy</option>
+              <option>Other</option>
+              <option>Rented</option>
+            </select>
           </div>
           <!-- Client -->
           <div class="mb-3 w-full">
-            <label for="client" class="">Client</label>
-            <input
-              type="text"
-              class="w-full bg-cultured rounded-md border border-lightGray py-1"
-              id="OrderClientInfo"
+            <label for="client mb-2" class="">Client</label>
+            <textarea
               name="client"
-            />
+              id="OrderClientInfo"
+              class="w-full bg-white rounded-md border border-lightGray py-2 pl-3 h-28 focus:border-blue focus:outline-none"
+            ></textarea>
           </div>
           <!-- Description -->
           <div class="mb-3 w-full mt-4">
-            <label for="description" class="">Description</label>
+            <label for="description mb-2" class="">Description</label>
             <textarea
               type="text"
-              class="w-full h-24 bg-cultured rounded-md border border-lightGray py-1"
-              id="OrdersDescriptionInfo"
+              class="w-full h-24 bg-white rounded-md border border-lightGray py-2 pl-3 focus:border-blue focus:outline-none"
+              id="OrderDescriptionInfo"
               name="description"
             ></textarea>
           </div>
