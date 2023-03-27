@@ -35,7 +35,7 @@ module.exports = {
           new: true,
         }
       );
-      res.json("Marked Complete");
+      res.json("Client informations changed");
     } catch (err) {
       console.log(err);
     }
