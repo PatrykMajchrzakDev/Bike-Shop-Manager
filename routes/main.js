@@ -20,6 +20,7 @@ router.put("/updateClient", clientsController.updateClient);
 
 //Order routes
 router.post("/createOrder", ordersController.addNewOrder);
+router.put("/updateOrder", ordersController.updateOrder);
 
 //auth
 router.get("/logout", authController.logout);

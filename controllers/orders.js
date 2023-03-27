@@ -19,4 +19,27 @@ module.exports = {
       console.log(err);
     }
   },
+  updateOrder: async (req, res) => {
+    try {
+      //Modal data is taken from public/js/clients.js
+      await Order.findOneAndUpdate(
+        {
+          _id: req.body.modalOrderData.id,
+        },
+        {
+          status: req.body.modalOrderData.status,
+          service: req.body.modalOrderData.service,
+          client: req.body.modalOrderData.client,
+          dueDate: req.body.modalOrderData.dueDate,
+          description: req.body.modalOrderData.description,
+        },
+        {
+          new: true,
+        }
+      );
+      res.json("Order informations changed");
+    } catch (err) {
+      console.log(err);
+    }
+  },
 };

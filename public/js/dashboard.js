@@ -17,10 +17,10 @@ async function getOrderInfoFromDB(id) {
 // Add a click event listener to each row
 rows.forEach((row) => {
   row.addEventListener("click", async (event) => {
-    id = document.querySelector("#ordersID").dataset.dbid;
+    let id = row.children[0].children[0].dataset.dbid;
     orderInfo = await getOrderInfoFromDB(id);
-    console.log(orderInfo);
-    console.log(row);
+    // console.log(orderInfo);
+    // console.log(row);
     //Set current order id in popup modal
     orderIdValue = row.children[0].innerText;
     document.querySelector(
@@ -42,7 +42,37 @@ rows.forEach((row) => {
     ).value = `${orderInfo.client.name}\n${orderInfo.client.address}\n${orderInfo.client.phone}\n${orderInfo.client.email}`;
 
     //Show description info
-    document.querySelector("#OrderDescriptionInfo").innerText =
+    document.querySelector("#OrderDescriptionInfo").value =
       orderInfo.description;
   });
 });
+
+//Update client button
+document
+  .querySelector("#submitUpdateOrderButton")
+  .addEventListener("click", updateOrder);
+
+//PUT request to update existing user
+async function updateOrder() {
+  try {
+    modalOrderData = {
+      id: orderInfo._id,
+      status: document.querySelector("#OrderStatusInfo").value,
+      dueDate: document.querySelector("#OrderDueDateInfo").value,
+      service: document.querySelector("#OrderServiceInfo").value,
+      client: orderInfo.client,
+      description: document.querySelector("#OrderDescriptionInfo").value,
+    };
+    const response = await fetch("/updateOrder", {
+      method: "put",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({
+        modalOrderData: modalOrderData,
+      }),
+    });
+    const data = await response.json();
+    location.reload();
+  } catch (err) {
+    console.log(err);
+  }
+}
