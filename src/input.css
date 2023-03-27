@@ -153,15 +153,18 @@
   /* ======================= */
 
   .badge-status-new {
-    @apply bg-green-500 text-white rounded-md;
+    @apply bg-green-500 text-white rounded-md max-w-[140px] mx-auto;
   }
   .badge-status-in-progress {
-    @apply bg-yellow-500 text-white rounded-md;
+    @apply bg-yellow-500 text-white rounded-md max-w-[140px] mx-auto;
   }
   .badge-status-wait-parts {
-    @apply bg-blue text-white rounded-md;
+    @apply bg-blue text-white rounded-md max-w-[140px] mx-auto;
   }
   .badge-status-done {
-    @apply bg-lightGray text-white rounded-md;
+    @apply bg-lightGray text-white rounded-md max-w-[140px] mx-auto;
+  }
+  .badge-client-called {
+    @apply bg-cyan-400 text-white rounded-md max-w-[140px] mx-auto;
   }
 }
