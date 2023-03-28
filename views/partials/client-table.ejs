@@ -50,7 +50,9 @@
     class="text-center table-border-bottom max-w-[20ch] text-ellipsis overflow-hidden whitespace-nowrap p-2 xs:hidden lg:table-cell"
   >
     <label for="my-modal-4" class="block cursor-pointer"
-      ><%= clients[i].description.substring(0,25) %></label
+      ><%if(clients[i].description.length > 20){ %> <%=
+      clients[i].description.substring(0,20) + ' ...' %> <%} else { %> <%=
+      clients[i].description%> <% } %></label
     >
   </td>
 </tr>

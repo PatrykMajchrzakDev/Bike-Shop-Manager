@@ -1,6 +1,5 @@
 TODO:
-0. make a get request to read params id from fetch
-1.Add a way to remove clients / orders
+1. alerts
 5. sales
 
 EXPAND:

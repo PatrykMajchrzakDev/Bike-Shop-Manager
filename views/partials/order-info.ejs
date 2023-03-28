@@ -6,7 +6,7 @@
   class="modal cursor-pointer left-[78px] w-[calc(100%-78px)]"
 >
   <label
-    class="modal-box relative bg-white max-w-[150rem] w-4/5 text-gray"
+    class="modal-box relative bg-white w-3/4 text-gray max-w-[50rem] scrollbar"
     for=""
   >
     <!-- Add order form -->
@@ -71,7 +71,7 @@
             <textarea
               name="client"
               id="OrderClientInfo"
-              class="w-full bg-white rounded-md border border-lightGray py-2 pl-3 h-28 focus:border-blue focus:outline-none disabled:opacity-50"
+              class="w-full bg-white rounded-md border border-lightGray py-2 pl-3 h-28 focus:border-blue focus:outline-none disabled:opacity-50 overflow-hidden"
               disabled
             ></textarea>
           </div>
@@ -85,14 +85,23 @@
               name="description"
             ></textarea>
           </div>
-          <!-- Save button -->
-          <button
-            class="w-[144px] text-base text-white font-medium cursor-pointer h-auto px-8 py-3 bg-blue rounded-3xl m-none"
-            form=""
-            id="submitUpdateOrderButton"
-          >
-            Save
-          </button>
+          <!-- Save / delete buttons -->
+          <div class="flex justify-between">
+            <button
+              class="text-base w-[144px] text-white font-medium cursor-pointer h-auto px-8 py-3 bg-blue rounded-3xl m-none"
+              form=""
+              id="submitUpdateOrderButton"
+            >
+              Save
+            </button>
+            <button
+              class="text-base w-[144px] text-white font-medium cursor-pointer h-auto px-8 py-3 bg-red-500 rounded-3xl m-none"
+              form=""
+              id="deleteOrderButton"
+            >
+              Delete
+            </button>
+          </div>
         </form>
       </div>
     </section>

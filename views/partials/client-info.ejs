@@ -4,9 +4,12 @@
   for="my-modal-4"
   class="modal cursor-pointer left-[78px] w-[calc(100%-78px)]"
 >
-  <label class="modal-box relative bg-white" for="">
+  <label
+    class="modal-box relative bg-white text-gray max-w-[50rem] scrollbar"
+    for=""
+  >
     <!-- Add user form -->
-    <section class="w-3/4 mx-auto flex text-black">
+    <section class="w-full mx-auto flex text-black">
       <!-- Intro -->
       <div class="w-full flex flex-col">
         <h2>Edit Client</h2>
@@ -22,7 +25,7 @@
             <label for="name">Name</label>
             <input
               type="text"
-              class="w-full bg-white rounded-md border border-lightGray py-1 text-black"
+              class="w-full bg-white rounded-md border border-lightGray py-2 pl-3 text-black"
               id="ClientsNameInfo"
               name="name"
             />
@@ -32,7 +35,7 @@
             <label for="phone" class="">Phone</label>
             <input
               type="text"
-              class="w-full bg-white rounded-md border border-lightGray py-1"
+              class="w-full bg-white rounded-md border border-lightGray py-2 pl-3"
               id="ClientsPhoneInfo"
               name="phone"
             />
@@ -42,7 +45,7 @@
             <label for="email" class="">Email</label>
             <input
               type="text"
-              class="w-full bg-white rounded-md border border-lightGray py-1"
+              class="w-full bg-white rounded-md border border-lightGray py-2 pl-3"
               id="ClientsEmailInfo"
               name="email"
             />
@@ -52,7 +55,7 @@
             <label for="address" class="">Address</label>
             <input
               type="text"
-              class="w-full bg-white rounded-md border border-lightGray py-1"
+              class="w-full bg-white rounded-md border border-lightGray py-2 pl-3"
               id="ClientsAddressInfo"
               name="address"
             />
@@ -86,19 +89,28 @@
             <label for="description" class="">Description</label>
             <textarea
               type="text"
-              class="w-full h-24 bg-white rounded-md border border-lightGray py-1"
+              class="w-full h-24 bg-white rounded-md border border-lightGray py-2 pl-3"
               id="ClientsDescriptionInfo"
               name="description"
             ></textarea>
           </div>
-          <!-- Save button -->
-          <button
-            class="text-base text-white font-medium cursor-pointer h-auto px-8 py-3 bg-blue rounded-3xl m-none"
-            form=""
-            id="submitUpdateClientButton"
-          >
-            Save
-          </button>
+          <!-- Save / delete buttons -->
+          <div class="flex justify-between">
+            <button
+              class="text-base w-[144px] text-white font-medium cursor-pointer h-auto px-8 py-3 bg-blue rounded-3xl m-none"
+              form=""
+              id="submitUpdateClientButton"
+            >
+              Save
+            </button>
+            <button
+              class="text-base w-[144px] text-white font-medium cursor-pointer h-auto px-8 py-3 bg-red-500 rounded-3xl m-none"
+              form=""
+              id="deleteClientButton"
+            >
+              Delete
+            </button>
+          </div>
         </form>
       </div>
     </section>

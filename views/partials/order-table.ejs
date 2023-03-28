@@ -1,6 +1,6 @@
 <!-- Loop through all orders in db and display info in table rows -->
 <% for(var i = 0; i < orders.length; i++){ %>
-<tr class="hover:bg-lightGray hover:text-white text-center table-border-bottom" id="<%='tableRow' + i%>">
+<tr class="hover:bg-lightGray hover:text-white text-center table-border-bottom <%= orders[i].status === 'Done' ? 'opacity-50 bg-zinc-400' : '' %>" id="<%='tableRow' + i%>">
   <!-- This include is modal popup that updates orders-->
   <%- include('../partials/order-info.ejs', {num:i, orders: orders}) -%>
   
@@ -57,7 +57,11 @@
     class="p-2 xs:hidden md:table-cell"
   >
     <label for="my-modal-4" class="block cursor-pointer"
-      ><%= orders[i].description.substring(0,30) + '...' %></label
+      ><%if(orders[i].description.length > 27){ %>
+        <%= orders[i].description.substring(0,30) + ' ...' %>
+      <%} else { %>
+        <%= orders[i].description%>
+    <%  }   %></label
     >
   </td>
 </tr>
