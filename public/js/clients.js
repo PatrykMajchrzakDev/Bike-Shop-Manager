@@ -1,8 +1,6 @@
 // Get all the table rows in the HTML table
 const rows = document.querySelectorAll("table tr");
 
-// Get the modal popup element and its close button
-const modal = document.getElementsByClassName(".modal.box");
 let clientID;
 
 // select clicked table row infos
@@ -139,3 +137,24 @@ searchInput.addEventListener("input", (e) => {
     tableRowClient[i].classList.toggle("hidden", !isVisible);
   }
 });
+
+//Delete client button
+document
+  .querySelector("#deleteClientButton")
+  .addEventListener("click", deleteClient);
+
+async function deleteClient() {
+  try {
+    const response = await fetch("/clients/deleteClient", {
+      method: "delete",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({
+        clientID: clientID,
+      }),
+    });
+    const data = await response.json();
+    location.reload();
+  } catch (error) {
+    throw error;
+  }
+}

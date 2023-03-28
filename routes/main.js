@@ -17,10 +17,12 @@ router.get("/clients", ensureAuth, dashboardController.getClients);
 //Client routes
 router.post("/createClient", clientsController.addNewClient);
 router.put("/updateClient", clientsController.updateClient);
+router.delete("/clients/deleteClient", clientsController.deleteClient);
 
 //Order routes
 router.post("/createOrder", ordersController.addNewOrder);
-router.put("/updateOrder", ordersController.updateOrder);
+router.put("/dashboard/updateOrder", ordersController.updateOrder);
+router.delete("/dashboard/deleteOrder", ordersController.deleteOrder);
 
 //auth
 router.get("/logout", authController.logout);

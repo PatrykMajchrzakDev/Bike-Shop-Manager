@@ -42,4 +42,14 @@ module.exports = {
       console.log(err);
     }
   },
+  deleteOrder: async (req, res) => {
+    try {
+      await Order.findOneAndDelete({
+        _id: req.body.orderID,
+      });
+      res.json("Deleted order");
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };

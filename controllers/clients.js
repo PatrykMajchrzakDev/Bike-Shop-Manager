@@ -40,4 +40,14 @@ module.exports = {
       console.log(err);
     }
   },
+  deleteClient: async (req, res) => {
+    try {
+      await Clients.findOneAndDelete({
+        _id: req.body.clientID,
+      });
+      res.json("Deleted client");
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };

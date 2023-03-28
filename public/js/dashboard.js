@@ -1,9 +1,6 @@
 // Get all the table rows in the HTML table
 const rows = document.querySelectorAll("table tr");
 
-// Get the modal popup element and its close button
-const modal = document.getElementsByClassName(".modal.box");
-
 async function getOrderInfoFromDB(id) {
   try {
     const response = await fetch(`/api/clickedOrderInfo/${id}`);
@@ -39,7 +36,7 @@ rows.forEach((row) => {
     //Show client info
     document.querySelector(
       "#OrderClientInfo"
-    ).value = `${orderInfo.client.name}\n${orderInfo.client.address}\n${orderInfo.client.phone}\n${orderInfo.client.email}`;
+    ).value = `Name:        ${orderInfo.client.name}\nAddress:   ${orderInfo.client.address}\nPhone:       ${orderInfo.client.phone}\nEmail:         ${orderInfo.client.email}`;
 
     //Show description info
     document.querySelector("#OrderDescriptionInfo").value =
@@ -52,7 +49,7 @@ document
   .querySelector("#submitUpdateOrderButton")
   .addEventListener("click", updateOrder);
 
-//PUT request to update existing user
+//PUT request to update existing order
 async function updateOrder() {
   try {
     modalOrderData = {
@@ -63,7 +60,7 @@ async function updateOrder() {
       client: orderInfo.client,
       description: document.querySelector("#OrderDescriptionInfo").value,
     };
-    const response = await fetch("/updateOrder", {
+    const response = await fetch("/dashboard/updateOrder", {
       method: "put",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({
@@ -74,5 +71,27 @@ async function updateOrder() {
     location.reload();
   } catch (err) {
     console.log(err);
+  }
+}
+
+//Delete client button
+document
+  .querySelector("#deleteOrderButton")
+  .addEventListener("click", deleteOrder);
+
+async function deleteOrder() {
+  try {
+    orderID = orderInfo._id;
+    const response = await fetch("/dashboard/deleteOrder", {
+      method: "delete",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({
+        orderID: orderID,
+      }),
+    });
+    const data = await response.json();
+    location.reload();
+  } catch (error) {
+    throw error;
   }
 }
