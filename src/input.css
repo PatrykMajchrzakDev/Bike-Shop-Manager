@@ -165,6 +165,12 @@
     @apply bg-lightGray text-white rounded-md max-w-[140px] mx-auto;
   }
   .badge-client-called {
-    @apply bg-cyan-400 text-white rounded-md max-w-[140px] mx-auto;
+    @apply bg-cyan-700 text-white rounded-md max-w-[140px] mx-auto;
+  }
+  .scrollbar::-webkit-scrollbar {
+    @apply bg-white w-[12px];
+  }
+  .scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-blue rounded-md shadow-md;
   }
 }
