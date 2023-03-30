@@ -1,3 +1,7 @@
+// =============================================
+// ============ FILLING POPUP MODAL ============
+// =============================================
+
 // Get all the table rows in the HTML table
 const rows = document.querySelectorAll("table tr");
 
@@ -44,6 +48,10 @@ rows.forEach((row) => {
   });
 });
 
+// =============================================================
+// ============ PUT METHOD - UPDATE EXISTING CLIENT ============
+// =============================================================
+
 //Update client button
 document
   .querySelector("#submitUpdateClientButton")
@@ -80,7 +88,9 @@ async function updateClient() {
   }
 }
 
-// ========= Search bar functionality =========
+// ==================================================
+// ============ SEARCH BAR FUNCTIONALITY ============
+// ==================================================
 const searchInput = document.querySelector("[data-search]");
 let clients = [];
 
@@ -137,6 +147,10 @@ searchInput.addEventListener("input", (e) => {
     tableRowClient[i].classList.toggle("hidden", !isVisible);
   }
 });
+
+// ===================================================================
+// ============ DELETE METHOD - DELETE USER FUNCTIONALITY ============
+// ===================================================================
 
 //Delete client button
 document
