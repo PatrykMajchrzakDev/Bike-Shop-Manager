@@ -11,7 +11,7 @@
       class="block cursor-pointer"
       id="clientsID"
       data-dbid="<%= clients[i]._id %>"
-      ><%= i + 1 %></label
+      ><%= (page - 1) * pageSize + i + 1 %></label
     >
   </td>
   <td class="text-center table-border-bottom p-2">

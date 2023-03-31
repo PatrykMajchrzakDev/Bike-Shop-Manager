@@ -81,6 +81,39 @@
               </tbody>
             </table>
           </form>
+
+          <!-- PAGES PAGINATION -->
+        </div>
+        <div class="pagination mt-3">
+          <a
+            href="/clients?page=1&pageSize=<%= pageSize %>"
+            class="btn btn-square btn-outline m-1"
+            >First</a
+          >
+          <% if (page > 1) { %>
+          <a
+            href="/clients?page=<%= page - 1 %>&pageSize=<%= pageSize %>"
+            class="btn btn-square btn-outline m-1"
+            >Prev</a
+          >
+          <% } %> <% for (let i = 1; i <= totalPages; i++) { %>
+          <a
+            href="/clients?page=<%= i %>&pageSize=<%= pageSize %>"
+            class="btn btn-square <%= page === i ? 'btn-active' : 'btn-outline' %> m-1"
+            ><%= i %></a
+          >
+          <% } %> <% if (page < totalPages) { %>
+          <a
+            href="/clients?page=<%= page + 1 %>&pageSize=<%= pageSize %>"
+            class="btn btn-square btn-outline m-1"
+            >Next</a
+          >
+          <% } %>
+          <a
+            href="/clients?page=<%= totalPages %>&pageSize=<%= pageSize %>"
+            class="btn btn-square btn-outline m-1"
+            >Last</a
+          >
         </div>
       </main>
     </section>
