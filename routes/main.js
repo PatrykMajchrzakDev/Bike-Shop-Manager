@@ -2,17 +2,17 @@ const express = require("express");
 const router = express.Router();
 const homeController = require("../controllers/home");
 const authController = require("../controllers/auth");
-const dashboardController = require("../controllers/dashboard");
+const mainController = require("../controllers/main");
 const { ensureAuth } = require("../middleware/passport");
 const clientsController = require("../controllers/clients");
 const ordersController = require("../controllers/orders");
 
 //Main Routes
 router.get("/", homeController.getIndex);
-router.get("/dashboard", ensureAuth, dashboardController.getDashboard);
-router.get("/new-client", ensureAuth, dashboardController.newClient);
-router.get("/new-order", ensureAuth, dashboardController.newOrder);
-router.get("/clients", ensureAuth, dashboardController.getClients);
+router.get("/dashboard", ensureAuth, mainController.getDashboard);
+router.get("/new-client", ensureAuth, mainController.newClient);
+router.get("/new-order", ensureAuth, mainController.newOrder);
+router.get("/clients", ensureAuth, mainController.getClients);
 
 //Client routes
 router.post("/createClient", clientsController.addNewClient);

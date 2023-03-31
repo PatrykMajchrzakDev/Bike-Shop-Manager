@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const apiController = require("../controllers/api");
 const { ensureAuth } = require("../middleware/passport");
-const dashboardController = require("../controllers/dashboard");
+const mainController = require("../controllers/main");
 
 // CLIENTS ROUTES
 router.get("/clients", apiController.getClients);
