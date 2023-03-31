@@ -1,5 +1,7 @@
 TODO:
-1. alerts
+1. pagination to orders
+2. promt "use sure u want to delete"
+3. change style of pagination
 5. sales
 
 EXPAND:
