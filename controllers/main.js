@@ -29,9 +29,22 @@ module.exports = {
   },
   getClients: async (req, res) => {
     try {
-      const clients = await Clients.find().sort({ createdAt: "desc" }).lean();
+      const page = parseInt(req.query.page) || 1; // get the current page number
+      const pageSize = parseInt(req.query.pageSize) || 15; // set the page size
+      const skip = (page - 1) * pageSize; // calculate the number of documents to skip
+      const clientsCount = await Clients.countDocuments(); // count the total number of documents in the collection
+      const totalPages = Math.ceil(clientsCount / pageSize); // calculate the total number of pages
+      const clients = await Clients.find()
+        .sort({ createdAt: "desc" })
+        .skip(skip)
+        .limit(pageSize)
+        .lean(); // retrieve the documents for the current page
+
       res.render("clients.ejs", {
-        clients: clients,
+        clients,
+        page,
+        pageSize,
+        totalPages,
       });
     } catch (err) {
       console.log(err);
