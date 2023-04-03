@@ -1,3 +1,10 @@
+//Change name of header
+document.querySelector("#header-title").innerText = "Add new order";
+
+// ============================================
+// ============ CLIENTS SEARCH BAR ============
+// ============================================
+
 let clients = [];
 let searchInput = document.querySelector("[data-searchForClientsInput]");
 //Fetch clients from db

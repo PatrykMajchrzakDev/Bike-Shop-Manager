@@ -12,6 +12,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/index.css" />
   </head>
   <body class="bg-cultured font-defaultFont">
@@ -19,26 +25,9 @@
     <%- include('partials/side-navigation.ejs') -%>
     <!-- Content -->
     <section
-      class="dashboardContent relative min-h-screen left-[78px] w-[calc(100%-78px)] transition-all duration-500 ease-linear z-10 break-words mr-0 font-defaultFont"
+      class="dashboardContent relative min-h-screen left-[78px] w-[calc(100%-78px)] transition-all duration-500 ease-linear z-10 break-words mr-0 font-defaultFont text-gray"
     >
-      <!-- Header -->
-      <header
-        class="flex shadow-md justify-between items-center h-[50px] text-lightGray"
-      >
-        <h2 class="pl-5 xs:text-lg sm:text-3xl">Add new client</h2>
-        <!-- Search box -->
-        <div class="relative text-lg w-52 xs:w-32 xs:mr-7 sm:mr-32 md:mr-40">
-          <i
-            class="fa-solid fa-magnifying-glass absolute z-10 -translate-y-2 pl-2 border-r-2 pr-2"
-          ></i>
-          <input
-            type="text"
-            placeholder="Search..."
-            name=""
-            class="text-gray absolute pl-[52px] w-full bg-white shadow-sm shadow-lightGray rounded-sm -top-[14px] md:w-60 sm:w-52"
-          />
-        </div>
-      </header>
+      <%- include('partials/header.ejs') -%>
       <main class="p-5">
         <!-- Go back button -->
         <div
@@ -140,5 +129,6 @@
     </section>
     <script src="js/sidenav.js"></script>
     <script src="js/order-notifications.js"></script>
+    <script src="js/newClient.js"></script>
   </body>
 </html>
