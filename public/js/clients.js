@@ -1,3 +1,6 @@
+//Change header name
+document.querySelector("#header-title").innerText = "Clients";
+
 // =============================================
 // ============ FILLING POPUP MODAL ============
 // =============================================
@@ -91,24 +94,15 @@ async function updateClient() {
 // ==================================================
 // ============ SEARCH BAR FUNCTIONALITY ============
 // ==================================================
-const searchInput = document.querySelector("[data-search]");
+const searchInput = document.querySelector("#header-search-bar");
 let clients = [];
-
-//Fetch clients from db
-async function getClientsFromDB() {
-  try {
-    const response = await fetch("/api/clients");
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    throw error;
-  }
-}
 
 //Function to save clients db document as variable
 async function getClientsList() {
   try {
-    clients = await getClientsFromDB();
+    const response = await fetch("/api/clients");
+    const clients = await response.json();
+    return clients;
   } catch (error) {
     throw error;
   }
@@ -158,17 +152,24 @@ document
   .addEventListener("click", deleteClient);
 
 async function deleteClient() {
-  try {
-    const response = await fetch("/clients/deleteClient", {
-      method: "delete",
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify({
-        clientID: clientID,
-      }),
-    });
-    const data = await response.json();
-    location.reload();
-  } catch (error) {
-    throw error;
+  if (confirm("Do you really want to DELETE this client?")) {
+    try {
+      const response = await fetch("/clients/deleteClient", {
+        method: "delete",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({
+          clientID: clientID,
+        }),
+      });
+      const data = await response.json();
+      location.reload();
+    } catch (error) {
+      throw error;
+    }
   }
 }
+
+// ==================================================
+// ============ PAGINATION FUNCTIONALITY ============
+// ==================================================
+document.querySelector(".btn-active").classList.add("bg-blue");

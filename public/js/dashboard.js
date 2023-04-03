@@ -1,3 +1,9 @@
+//Change name of order header
+document.querySelector("#header-title").innerText = "Dashboard";
+
+// ===================================================
+// ============ MODAL POPUP FUNCTIONALITY ============
+// ===================================================
 // Get all the table rows in the HTML table
 const rows = document.querySelectorAll("table tr");
 
@@ -44,7 +50,10 @@ rows.forEach((row) => {
   });
 });
 
-//Update client button
+// ====================================================
+// ============ UPDATE ORDER FUNCTIONALITY ============
+// ====================================================
+//Update order button
 document
   .querySelector("#submitUpdateOrderButton")
   .addEventListener("click", updateOrder);
@@ -74,24 +83,34 @@ async function updateOrder() {
   }
 }
 
-//Delete client button
+// ====================================================
+// ============ DELETE ORDER FUNCTIONALITY ============
+// ====================================================
+//Delete order button
 document
   .querySelector("#deleteOrderButton")
   .addEventListener("click", deleteOrder);
 
 async function deleteOrder() {
-  try {
-    orderID = orderInfo._id;
-    const response = await fetch("/dashboard/deleteOrder", {
-      method: "delete",
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify({
-        orderID: orderID,
-      }),
-    });
-    const data = await response.json();
-    location.reload();
-  } catch (error) {
-    throw error;
+  if (confirm("Do you really want to DELETE this order?")) {
+    try {
+      orderID = orderInfo._id;
+      const response = await fetch("/dashboard/deleteOrder", {
+        method: "delete",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({
+          orderID: orderID,
+        }),
+      });
+      const data = await response.json();
+      location.reload();
+    } catch (error) {
+      throw error;
+    }
   }
 }
+
+// ==================================================
+// ============ PAGINATION FUNCTIONALITY ============
+// ==================================================
+document.querySelector(".btn-active").classList.add("bg-blue");
