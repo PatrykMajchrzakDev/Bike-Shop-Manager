@@ -28,22 +28,7 @@
     <section
       class="dashboardContent relative min-h-screen left-[78px] w-[calc(100%-78px)] transition-all duration-500 ease-linear z-10 break-words mr-0 font-defaultFont"
     >
-      <!-- Header -->
-      <header class="flex shadow-md justify-between items-center h-[50px]">
-        <h2 class="pl-5 xs:text-lg sm:text-3xl">Dashboard</h2>
-        <!-- Search box -->
-        <div class="relative text-lg w-52 xs:w-32 xs:mr-7 sm:mr-32 md:mr-40">
-          <i
-            class="fa-solid fa-magnifying-glass absolute z-10 -translate-y-2 pl-2 border-r-2 pr-2"
-          ></i>
-          <input
-            type="text"
-            placeholder="Search..."
-            name=""
-            class="absolute pl-[52px] w-full bg-white shadow-sm shadow-lightGray rounded-sm -top-[14px] md:w-60 sm:w-52"
-          />
-        </div>
-      </header>
+    <%- include('partials/header.ejs') -%>
       <main class="p-5">
         <!-- Order notifications -->
         <%- include('partials/order-notifications.ejs') -%>
@@ -73,6 +58,39 @@
             </table>
           </form>
         </div>
+        <!-- PAGES PAGINATION -->
+      </div>
+      <div class="pagination mt-3 text-gray">
+        <a
+          href="/dashboard?page=1&pageSize=<%= pageSize %>"
+          class="btn btn-square btn-outline m-1 text-gray"
+          >First</a
+        >
+        <% if (page > 1) { %>
+        <a
+          href="/dashboard?page=<%= page - 1 %>&pageSize=<%= pageSize %>"
+          class="btn btn-square btn-outline m-1 text-gray"
+          >Prev</a
+        >
+        <% } %> <% for (let i = 1; i <= totalPages; i++) { %>
+        <a
+          href="/dashboard?page=<%= i %>&pageSize=<%= pageSize %>"
+          class="btn btn-square <%= page === i ? 'btn-active' : 'btn-outline' %> m-1 text-gray"
+          ><%= i %></a
+        >
+        <% } %> <% if (page < totalPages) { %>
+        <a
+          href="/dashboard?page=<%= page + 1 %>&pageSize=<%= pageSize %>"
+          class="btn btn-square btn-outline m-1 text-gray"
+          >Next</a
+        >
+        <% } %>
+        <a
+          href="/dashboard?page=<%= totalPages %>&pageSize=<%= pageSize %>"
+          class="btn btn-square btn-outline m-1 text-gray"
+          >Last</a
+        >
+      </div>
       </main>
     </section>
     <script src="js/sidenav.js"></script>

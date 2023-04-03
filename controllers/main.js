@@ -5,9 +5,21 @@ const Order = require("../models/Order");
 module.exports = {
   getDashboard: async (req, res) => {
     try {
-      const orders = await Order.find().sort({ createdAt: "desc" }).lean();
+      const page = parseInt(req.query.page) || 1; // get the current page number
+      const pageSize = parseInt(req.query.pageSize) || 15; // set the page size
+      const skip = (page - 1) * pageSize; // calculate the number of documents to skip
+      const ordersCount = await Order.countDocuments(); // count the total number of documents in the collection
+      const totalPages = Math.ceil(ordersCount / pageSize); // calculate the total number of pages
+      const orders = await Order.find()
+        .sort({ createdAt: "desc" })
+        .skip(skip)
+        .limit(pageSize)
+        .lean();
       res.render("dashboard.ejs", {
-        orders: orders,
+        orders,
+        page,
+        pageSize,
+        totalPages,
       });
     } catch (err) {
       console.log(err);
