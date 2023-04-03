@@ -1,7 +1,5 @@
 TODO:
-1. pagination to orders
-2. promt "use sure u want to delete"
-3. change style of pagination
+1. add search bar functionality from clients.js
 5. sales
 
 EXPAND:
