@@ -2,8 +2,58 @@
 document.querySelector("#header-title").innerText = "Dashboard";
 
 // ===================================================
+// ============= SEARCH BAR FUNCIONALITY =============
+// ===================================================
+//Saves orders db document as variable
+const searchInput = document.querySelector("#header-search-bar");
+searchInput.addEventListener("click", getOrdersFromDb);
+
+async function getOrdersFromDb() {
+  try {
+    const response = await fetch("/api/getListOfOrders");
+    const listOfOrders = await response.json();
+    return listOfOrders;
+  } catch (error) {
+    throw error;
+  }
+}
+
+searchInput.addEventListener("input", (e) => {
+  //Grabs search bar input value
+  const value = e.target.value.toLowerCase();
+  //Grabs all tbody children (table rows)
+  let tableRowOrder = document.querySelector("tbody").children;
+
+  //Loop through all table rows and checks if table row name, phone, address matches inputted value
+  for (let i = 0; i < tableRowOrder.length; i++) {
+    let tableRowNumber = document.querySelector(`#tableRow${i}`);
+    const isVisible =
+      //status
+      tableRowNumber.children[1].textContent
+        .toLowerCase()
+        .trim()
+        .includes(value) ||
+      //service
+      tableRowNumber.children[3].textContent
+        .toLowerCase()
+        .trim()
+        .includes(value) ||
+      //client
+      tableRowNumber.children[4].textContent
+        .toLowerCase()
+        .trim()
+        .includes(value);
+    //description
+    tableRowNumber.children[4].textContent.toLowerCase().trim().includes(value);
+    //if doesnt match then add 'hidden' class
+    tableRowOrder[i].classList.toggle("hidden", !isVisible);
+  }
+});
+
+// ===================================================
 // ============ MODAL POPUP FUNCTIONALITY ============
 // ===================================================
+
 // Get all the table rows in the HTML table
 const rows = document.querySelectorAll("table tr");
 
