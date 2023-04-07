@@ -1119,18 +1119,41 @@
           let allOrders = await getListOfOrders();
           //Loop through orders and check if is Done and then if urgent
           urgentOrders = 0;
-          normalOrders = 0;
+          activeOrders = 0;
+
+          //Get all table rows first id elements which hold data-dbid attribute
+          const allRowsFirstChildren = Array.from(
+            document.querySelectorAll("table tr td:first-child label")
+          );
+
           for (let order of allOrders) {
             if (order.status === "Done" || order.status === "Client called") {
               continue;
             } else if (
+              //If current date compared to dueDate is less than 2 days then add counter to urgent and total
               differenceInDays(new Date(parserISO(order.dueDate)), new Date()) <
               2
             ) {
+              for (item of allRowsFirstChildren) {
+                if (item.dataset.dbid === order._id) {
+                  const fireIcon = document.createElement("i");
+                  fireIcon.setAttribute(
+                    "class",
+                    "fa-solid fa-fire text-xl grow-[1] text-center "
+                  );
+                  item.parentElement.classList.add(
+                    "flex",
+                    "items-center",
+                    "border-none"
+                  );
+                  item.parentElement.insertBefore(fireIcon, item);
+                }
+              }
+              // allRowsFirstChildren.map(order._id === )
               urgentOrders += 1;
-              normalOrders += 1;
+              activeOrders += 1;
             } else {
-              normalOrders += 1;
+              activeOrders += 1;
             }
           }
           document.querySelector(
@@ -1138,7 +1161,7 @@
           ).innerHTML = `${urgentOrders} work orders(s)`;
           document.querySelector(
             "#greenOrdersNumber"
-          ).innerHTML = `${normalOrders} work orders(s)`;
+          ).innerHTML = `${activeOrders} work orders(s)`;
         }
       },
       { "date-fns/differenceInDays": 6, "date-fns/parseISO": 7 },
