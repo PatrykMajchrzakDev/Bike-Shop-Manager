@@ -40,7 +40,8 @@
   },
   "scripts": {
     "dev": "concurrently \"nodemon main.js\" \"tailwindcss -i ./src/input.css -o ./public/css/index.css --watch\"",
-    "start": "nodemon server.js",
-    "tailwind": "tailwindcss -i ./src/input.css -o ./public/css/index.css --watch"
+    "start": "node server.js",
+    "tailwind": "tailwindcss -i ./src/input.css -o ./public/css/index.css --watch",
+    "build": "NODE_ENV=production tailwindcss -i ./src/input.css -o ./public/css/index.css --minify"
   }
 }
